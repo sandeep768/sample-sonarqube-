@@ -1,0 +1,56 @@
+.fnf-image {
+  background-image: url(src/assets/images/404.jpg);
+  height: 80vh;
+  width: 100%;
+  background-repeat: round;
+}
+
+.center {
+  margin: auto;
+}
+
+.outer {
+  display: table;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.middle {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.inner {
+  margin-left: auto;
+  margin-right: auto;
+  width: 400px;
+}
+
+.heading {
+  color: #1e2134;
+  font-weight: bolder;
+  padding-bottom: 10px;
+  font-family: Hind;
+}
+
+.content {
+  margin: 0;
+  font-family: Hind;
+  color: #b8b8b8;
+}
+
+.backbtn {
+  color: #b4b6e3;
+  border: none;
+  background: transparent;
+  font-family: Hind;
+  padding-top: 40%;
+  cursor: pointer;
+}
+
+button:focus {
+    outline: none;
+}

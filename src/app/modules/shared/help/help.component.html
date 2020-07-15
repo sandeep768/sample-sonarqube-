@@ -1,0 +1,1604 @@
+<div class="spinner-border" [ngClass]="isDarkTheme ? 'text-light' : 'text-dark'" *ngIf="load" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+<div class="row headerRow" [ngClass]="isDarkTheme ? 'header-dark' : 'header-light'">
+  <div class="col-lg-2 padding-top">
+    <a class="mt-2" href="#" data-toggle="offcanvas" data-target="#mainMenu">
+      <img
+        [src]="isDarkTheme ? '../../../../../assets/images/ironiq-dark.png' : '../../../../../assets/images/ironiq-light.png'">
+    </a>
+  </div>
+  <div class="col-lg-8">
+    <p class="title-text text-center" [ngClass]="isDarkTheme ? 'title-dark' : 'title-light'">
+      Help
+    </p>
+  </div>
+  <div class="col-lg-2 py-1">
+    <i class="mdi mdi-close float-right" [ngClass]="isDarkTheme ? 'dark' : 'light'" routerLink="/"
+      (click)="loader()"></i>
+  </div>
+</div>
+<!-- <div class="col-lg-2 padding-top">
+    <a class="mt-2" href="#" data-toggle="offcanvas" data-target="#mainMenu">
+      <img [src]="
+          isDarkTheme
+            ? '../../../../../assets/images/ironiq-dark.png'
+            : '../../../../../assets/images/ironiq-light.png'
+        " />
+    </a>
+  </div> -->
+<div id="content">
+  <div class="nav flex-column nav-pills custom-scroll-light" id="v-pills-tab" role="tablist"
+    aria-orientation="vertical">
+    <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-one" role="tab"
+      aria-controls="v-pills-one" aria-selected="true">Getting started</a>
+    <a class="nav-link" id="v-pills-two-tab" data-toggle="pill" href="#v-pills-two" role="tab"
+      aria-controls="v-pills-two" aria-selected="false">Basic Concepts</a>
+    <a class="nav-link" id="v-pills-three-tab" data-toggle="pill" href="#v-pills-three" role="tab"
+      aria-controls="v-pills-three" aria-selected="false">Permissions Overview</a>
+    <a class="nav-link" id="v-pills-four-tab" data-toggle="pill" href="#v-pills-four" role="tab"
+      aria-controls="v-pills-four" aria-selected="false">Organization Roles</a>
+    <a class="nav-link" id="v-pills-five-tab" data-toggle="pill" href="#v-pills-five" role="tab"
+      aria-controls="v-pills-five" aria-selected="false">Singlestat</a>
+    <a class="nav-link" id="v-pills-six-tab" data-toggle="pill" href="#v-pills-six" role="tab"
+      aria-controls="v-pills-six" aria-selected="false">Table</a>
+    <a class="nav-link" id="v-pills-seven-tab" data-toggle="pill" href="#v-pills-seven" role="tab"
+      aria-controls="v-pills-seven" aria-selected="false">Heatmap</a>
+    <a class="nav-link" id="v-pills-eight-tab" data-toggle="pill" href="#v-pills-eight" role="tab"
+      aria-controls="v-pills-eight" aria-selected="false">Alert list</a>
+    <a class="nav-link" id="v-pills-nine-tab" data-toggle="pill" href="#v-pills-nine" role="tab"
+      aria-controls="v-pills-nine" aria-selected="false">Dashboard list</a>
+    <a class="nav-link" id="v-pills-ten-tab" data-toggle="pill" href="#v-pills-ten" role="tab"
+      aria-controls="v-pills-ten" aria-selected="false">Text</a>
+    <a class="nav-link" id="v-pills-twon-tab" data-toggle="pill" href="#v-pills-twon" role="tab"
+      aria-controls="v-pills-twon" aria-selected="false">Annotations</a>
+    <a class="nav-link" id="v-pills-threen-tab" data-toggle="pill" href="#v-pills-threen" role="tab"
+      aria-controls="v-pills-threen" aria-selected="false">Folders</a>
+    <a class="nav-link" id="v-pills-fourn-tab" data-toggle="pill" href="#v-pills-fourn" role="tab"
+      aria-controls="v-pills-fourn" aria-selected="false">Playlist</a>
+    <a class="nav-link" id="v-pills-fiven-tab" data-toggle="pill" href="#v-pills-fiven" role="tab"
+      aria-controls="v-pills-fiven" aria-selected="false">Search</a>
+    <a class="nav-link" id="v-pills-sixn-tab" data-toggle="pill" href="#v-pills-sixn" role="tab"
+      aria-controls="v-pills-sixn" aria-selected="false">Sharing</a>
+    <a class="nav-link" id="v-pills-sevenn-tab" data-toggle="pill" href="#v-pills-sevenn" role="tab"
+      aria-controls="v-pills-sevenn" aria-selected="false">Time Range</a>
+    <a class="nav-link" id="v-pills-eightn-tab" data-toggle="pill" href="#v-pills-eightn" role="tab"
+      aria-controls="v-pills-eightn" aria-selected="false">Dashboard Version History</a>
+    <a class="nav-link" id="v-pills-ninen-tab" data-toggle="pill" href="#v-pills-ninen" role="tab"
+      aria-controls="v-pills-ninen" aria-selected="false">Mixed Data</a>
+    <a class="nav-link" id="v-pills-tenn-tab" data-toggle="pill" href="#v-pills-tenn" role="tab"
+      aria-controls="v-pills-tenn" aria-selected="false">Keyboard shortcuts</a>
+  </div>
+  <div class="tab-content custom-scroll-light" id="v-pills-tabContent">
+    <div class="tab-pane fade show active" id="v-pills-one" role="tabpanel" aria-labelledby="v-pills-one-tab">
+      <div>
+        <article>
+          <h2>Getting started</h2>
+          <div class="docs-content-inner" id="doc-article-text">
+            <h1 id="getting-started"></h1>
+            <p>This guide will help you get started and acquainted with iron-iq. It assumes you have a working iron-iq
+              server up and running.</p>
+            <h2 id="logging-in-for-the-first-time">Logging in for the first time</h2>
+            <p>
+              3000 is the default http port that iron-iq listens to if you haven’t configured a different port.</p>
+            <p>There you will see the login page. Default username is admin and default password is admin. When you log
+              in
+              for the first time you will be asked to change your password. We strongly encourage you to follow
+              iron-iq’s
+              best practices and change the default administrator password. You can later go to user preferences and
+              change your user name.</p>
+            <h2 id="how-to-add-a-data-source">How to add a data source</h2>
+            <div class="docs-image docs-image--right docs-image--no-shadow" style="max-width: 250px">
+              <div class="screenshot" lg-uid="lg0"><a href="assets/docs_images/sidemenu-datasource.png" title=""
+                  lg-event-uid="&amp;1"><img alt="" src="assets/docs_images/sidemenu-datasource.png"></a>
+                <!-- {{!-- <div class="screenshot__zoom"><img src="/images/docs_images/zoom.png"></div> --}} -->
+              </div>
+            </div>
+            <p>Before you create your first dashboard you need to add your data source.</p>
+            <p>First move your cursor to the cog on the side menu which will show you the configuration menu. If the
+              side
+              menu is not visible click the iron-iq icon in the upper left corner. The first item on the configuration
+              menu is data sources, click on that and you’ll be taken to the data sources page where you can add and
+              edit
+              data sources. You can also simply click the cog.</p>
+            <p>Click Add data source and you will come to the settings page of your new data source.</p>
+            <div class="docs-image docs-image--no-shadow" style="max-width: 700px">
+              <div class="screenshot" lg-uid="lg1"><img alt="" src="assets/docs_images/add-datasource.png">
+                <!-- {{!-- <div class="screenshot__zoom"><img src="/images/docs_images/zoom.png"></div> --}} -->
+
+              </div>
+            </div>
+            <p>First, give the data source a Name and then select which Type of data source you’ll want to create</p>
+            <div class="docs-image docs-image--no-shadow" style="max-width: 700px">
+              <div class="screenshot" lg-uid="lg2"><a href="assets/docs_images/datasource-settings.png" title=""
+                  lg-event-uid="&amp;3"><img alt="" src="assets/doc_iamges/datasource-settings.png">
+                  <!-- {{!-- <div class="screenshot__zoom"><img src="/images/docs_images/zoom.png"></div> --}} -->
+                </a></div>
+            </div>
+            <p>After you have configuered your data source you are ready to save and test.</p>
+            <h2 id="basic-concepts">Basic Concepts</h2>
+            <p>Read the Basic Concepts document to get a
+              crash course in key iron-iq concepts.</p>
+            <h3 id="top-header">Top header</h3>
+            <p>Let’s start with creating a new Dashboard. You can find the new Dashboard link on the right side of the
+              Dashboard picker. You now have a blank Dashboard.</p>
+            <p><img class="no-shadow" src="assets/docs_images/top_nav_annotated.png" width="580px">
+            </p>
+            <p>The image above shows you the top header for a Dashboard.</p>
+            <ol>
+              <li>Side menubar toggle: This toggles the side menu, allowing you to focus on the data presented in the
+                dashboard. The side menu provides access to features unrelated to a Dashboard such as Users,
+                Organizations, and Data Sources.</li>
+              <li>Dashboard dropdown: This dropdown shows you which Dashboard you are currently viewing, and allows you
+                to
+                easily switch to a new Dashboard. From here you can also create a new Dashboard or folder, Import
+                existing
+                Dashboards, and manage Dashboard playlists.</li>
+              <li>Add Panel: Adds a new panel to the current Dashboard</li>
+              <li>Star Dashboard: Star (or unstar) the current Dashboard. Starred Dashboards will show up on your own
+                Home
+                Dashboard by default, and are a convenient way to mark Dashboards that you’re interested in.</li>
+              <li>Share Dashboard: Share the current dashboard by creating a link or create a static Snapshot of it.
+                Make
+                sure the Dashboard is saved before sharing.</li>
+              <li>Save dashboard: The current Dashboard will be saved with the current Dashboard name.</li>
+              <li>Settings: Manage Dashboard settings and features such as Templating and Annotations.</li>
+            </ol>
+            <h2 id="dashboards-panels-the-building-blocks-of-iron-iq">Dashboards, Panels, the building blocks of
+              iron-iq…</h2>
+            <p>Dashboards are at the core of what iron-iq is all about. Dashboards are composed of individual Panels
+              arranged on a grid. iron-iq ships with a variety of Panels. iron-iq makes it easy to construct the right
+              queries, and customize the display properties so that you can create the perfect Dashboard for your need.
+              Each Panel can interact with data from any configured iron-iq Data Source (currently Graphite, Prometheus,
+              Elasticsearch, InfluxDB, OpenTSDB, MySQL, PostgreSQL, Microsoft SQL Server and AWS Cloudwatch). The Basic
+              Concepts guide explores these key ideas in
+              detail.</p>
+            <p><img src="/assets/docs_images/dashboard_annotated.png" class="no-shadow" width="700px">
+            </p>
+            <ol>
+              <li>Zoom out time range</li>
+              <li>Time picker dropdown. Here you can access relative time range options, auto refresh options and set
+                custom absolute time ranges.</li>
+              <li>Manual refresh button. Will cause all panels to refresh (fetch new data).</li>
+              <li>Dashboard panel. You edit panels by clicking the panel title.</li>
+              <li>Graph legend. You can change series colors, y-axis and series visibility directly from the legend.
+              </li>
+            </ol>
+            <h2 id="adding-editing-graphs-and-panels">Adding &amp; Editing Graphs and Panels</h2>
+            <p><img src="/assets/docs_images/metrics_tab.png" alt=""></p>
+            <ol>
+              <li>You add panels by clicking the Add panel icon on the top menu.</li>
+              <li>To edit the graph you click on the graph title to open the panel menu, then <code>Edit</code>.</li>
+              <li>This should take you to the <code>Metrics</code> tab. In this tab you should see the editor for your
+                default data source.</li>
+            </ol>
+            <p>When you click the <code>Metrics</code> tab, you are presented with a Query Editor that is specific to
+              the
+              Panel Data Source. Use the Query Editor to build your queries and iron-iq will visualize them in real
+              time.
+            </p>
+            <h2 id="drag-and-drop-panels">Drag-and-Drop panels</h2>
+            <p>You can Drag-and-Drop Panels by simply clicking and holding the Panel title, and drag it to its new
+              location. You can also easily resize panels by clicking the (-) and (+) icons.</p>
+            <p><img src="/images/docs_images/drag_drop.gif" alt=""></p>
+            <h2 id="tips-and-shortcuts">Tips and shortcuts
+            </h2>
+            <ul>
+              <li>Click the graph title and in the dropdown menu quickly change span or duplicate the panel.</li>
+              <li>Click the Save icon in the menu to save the dashboard with a new name</li>
+              <li>Click the Save icon in the menu and then advanced to export the dashboard to json file, or set it as
+                your default dashboard.</li>
+              <li>Click the colored icon in the legend to select series color</li>
+              <li>Click series name in the legend to hide series</li>
+              <li>Ctrl/Shift/Meta + Click legend name to hide other series</li>
+            </ul>
+            <h2 id="iron-iq-loves-the-keyboard">iron-iq loves the keyboard</h2>
+            <ul>
+              <li>Ctrl+S Saves the current dashboard</li>
+              <li>Ctrl+F Opens the dashboard finder / search</li>
+              <li>Ctrl+H Hides all controls (good for tv displays)</li>
+              <li>Hit Escape to exit graph when in fullscreen or edit mode</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="v-pills-two" role="tabpanel" aria-labelledby="v-pills-two-tab">
+      <div>
+        <article>
+          <h2>Basic Concepts</h2>
+          <div class="docs-content-inner" id="doc-article-text">
+            <h1 id="basic-concepts"></h1>
+            <p>This document is a “bottom up” introduction to basic concepts in iron-iq, and can be used as a starting
+              point to get familiar with core features.</p>
+            <h3 id="user">User</h3>
+            <p>A User is a named account in iron-iq. A user can belong to one or more Organizations, and can be assigned
+              different levels of privileges through roles.</p>
+            <p>iron-iq supports a wide variety of internal and external ways for Users to authenticate themselves. These
+              include from its own integrated database, from an external SQL server, or from an external LDAP server.
+            </p>
+            <h3 id="row">Row</h3>
+            <p>A Row is a logical divider within a Dashboard, and is used to group Panels together.</p>
+            <p>Rows are always 12 “units” wide. These units are automatically scaled dependent on the horizontal
+              resolution of your browser. You can control the relative width of Panels within a row by setting their own
+              width.</p>
+            <p>We utilize a unit abstraction so that iron-iq looks great on all screens both small and huge.</p>
+            <blockquote>
+              <p>Note: With MaxDataPoint functionality, iron-iq can show you the perfect amount of datapoints no matter
+                your resolution or time-range.</p>
+            </blockquote>
+            <p>Utilize the Repeating Rows
+              functionality to dynamically create or remove entire Rows (that can be filled with Panels), based on
+              the Template variables selected.</p>
+            <p>Rows can be collapsed by clicking on the Row Title. If you save a Dashboard with a Row collapsed, it will
+              save in that state and will not preload those graphs until the row is expanded.</p>
+            <h3 id="panel">Panel</h3>
+            <p>The Panel is the basic visualization building block in iron-iq. Each Panel provides a Query Editor
+              (dependent on the Data Source selected in the panel) that allows you to extract the perfect visualization
+              to
+              display on the Panel by utilizing the Query Editor</p>
+            <p>There are a wide variety of styling and formatting options that each Panel exposes to allow you to create
+              the perfect picture.</p>
+            <p>Panels can be dragged and dropped and rearranged on the Dashboard. They can also be resized.</p>
+            <p>There are currently five Panel types: Graph <br> Singlestat <br> Dashlist <br> Table and .</p>
+            <p>Panels like theGraph panel allow you to graph as
+              many metrics and series as you want. Other panels like
+              Singlestat require a reduction of a single query
+              into a single number. Dashlist and Text are special panels that do not connect to any
+              Data Source.</p>
+            <p>Panels can be made more dynamic by utilizing Dashboard Templating variable strings within the
+              panel configuration (including queries to your Data Source configured via the Query Editor).</p>
+            <p>Utilize the Repeating Panel
+              functionality to dynamically create or remove Panels based on the Templating Variables selected.
+            </p>
+            <p>The time range on Panels is normally what is set in the Dashboard time picker but this can be overridden
+              by utilizes.</p>
+            <p>Panels (or an entire Dashboard) can be Shared
+              easily in a variety of ways. You can send a link to someone who has a login to your iron-iq. You can use
+              the
+              Snapshot feature to encode all the data
+              currently being viewed into a static and interactive JSON document; it’s so much better than emailing a
+              screenshot!</p>
+            <h3 id="query-editor">Query Editor</h3>
+            <p>The Query Editor exposes capabilities of your Data Source and allows you to query the metrics that it
+              contains.</p>
+            <p>Use the Query Editor to build one or more queries (for one or more series) in your time series database.
+              The panel will instantly update allowing you to effectively explore your data in real time and build a
+              perfect query for that particular Panel.</p>
+            <p>You can utilize Template variables in the
+              Query Editor within the queries themselves. This provides a powerful way to explore data dynamically based
+              on the Templating variables selected on the Dashboard.</p>
+            <p>iron-iq allows you to reference queries in the Query Editor by the row that they’re on. If you add a
+              second
+              query to graph, you can reference the first query simply by typing in #A. This provides an easy and
+              convenient way to build compounded queries.</p>
+            <h3 id="dashboard">Dashboard</h3>
+            <p>The Dashboard is where it all comes together. Dashboards can be thought of as of a set of one or more
+              Panels organized and arranged into one or more Rows.</p>
+            <p>The time period for the Dashboard can be controlled by the Dashboard time picker in the upper right of
+              the
+              Dashboard.</p>
+            <p>Dashboards can utilize Templating to make them
+              more dynamic and interactive.</p>
+            <p>Dashboards can utilize Annotations to display
+              event data across Panels. This can help correlate the time series data in the Panel with other events.</p>
+            <p>Dashboards (or a specific Panel) can be Shared
+              easily in a variety of ways. You can send a link to someone who has a login to your iron-iq. You can use
+              the
+              Snapshot feature to encode all the data
+              currently being viewed into a static and interactive JSON document; it’s so much better than emailing a
+              screenshot!</p>
+            <p>Dashboards can be tagged, and the Dashboard picker provides quick, searchable access to all Dashboards in
+              a
+              particular Organization.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="v-pills-three" role="tabpanel" aria-labelledby="v-pills-three-tab">
+      <div>
+        <article>
+          <h2>Permissions Overview</h2>
+          <div class="docs-content-inner" id="doc-article-text">
+            <h1 id="permissions-overview"></h1>
+            <p>iron-iq users have permissions that are determined by their:</p>
+            <ul>
+              <li><strong>Organization Role</strong> (Admin, Editor, Viewer)</li>
+              <li>Via <strong>Team</strong> memberships where the <strong>Team</strong> has been assigned specific
+                permissions.</li>
+              <li>Via permissions assigned directly to user (on folders, dashboards, datasources)</li>
+              <li>The iron-iq Admin (i.e. Super Admin) user flag.</li>
+            </ul>
+            <h2 id="iron-iq-admin">iron-iq Admin</h2>
+            <p>This admin flag makes a user a <code>Super Admin</code>. This means they can access the <code>Server
+                Admin</code> views where all users and organizations can be administrated.</p>
+            <h2 id="organization-roles">Organization Roles
+            </h2>
+            <p>Users can be belong to one or more organizations. A user’s organization membership is tied to a role that
+              defines what the user is allowed to do in that organization.</p>
+            <h2 id="dashboard-folder-permissions">Dashboard &amp; Folder Permissions</h2>
+            <p>Dashboard and folder permissions allows you to remove the default role based permissions for Editors and
+              Viewers and assign permissions to specific <strong>Users</strong> and <strong>Teams</strong>.Dashboard
+              &amp;
+              Folder
+              Permissions.</p>
+            <h2 id="datasource-permissions">Datasource Permissions</h2>
+            <p>Per default, a datasource in an organization can be queried by any user in that organization. For example
+              a
+              user with <code>Viewer</code> role can still issue any possible query to a data source, not just those
+              queries that exist on dashboards he/she has access to.</p>
+            <p>Datasource permissions allows you to change the default permissions for datasources and restrict query
+              permissions to specific <strong>Users</strong> and <strong>Teams</strong>.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="v-pills-four" role="tabpanel" aria-labelledby="v-pills-four-tab">
+      <div>
+        <article>
+          <h2>Organization Roles</h2>
+          <div class="docs-content-inner" id="doc-article-text">
+            <h1 id="organization-roles">
+            </h1>
+            <p>Users can be belong to one or more organizations. A user’s organization membership is tied to a role that
+              defines what the user is allowed to do in that organization.</p>
+            <h2 id="admin-role">Admin Role</h2>
+            <p>Can do everything scoped to the organization. For example:</p>
+            <ul>
+              <li>Add &amp; Edit data sources. </li>
+              <li>Add &amp; Edit organization users &amp; teams.</li>
+              <li>Configure App plugins &amp; set org settings.</li>
+            </ul>
+            <h2 id="editor-role">Editor Role</h2>
+            <ul>
+              <li>Can create and modify dashboards &amp; alert rules. This can be disabled on specific folders and
+                dashboards.</li>
+              <li><strong>Cannot</strong> create or edit data sources nor invite new users.</li>
+            </ul>
+            <p>This role can be tweaked via iron-iq server setting . If
+              you set this to true users with <strong>Editor</strong> can also administrate dashboards, folders and
+              teams
+              they create. Useful for enabling self organizing teams.</p>
+            <h2 id="viewer-role">Viewer Role</h2>
+            <ul>
+              <li>View any dashboard. This can be disabled on specific folders and dashboards.</li>
+              <li><strong>Cannot</strong> create or edit dashboards nor data sources.</li>
+            </ul>
+            <p>This role can be tweaked via iron-iq server setting . If you
+              set this to true users with <strong>Viewer</strong> can also make transient dashboard edits, meaning they
+              can modify panels &amp; queries but not save the changes (nor create new dashboards). Useful for public
+              iron-iq installations where you want anonymous users to be able to edit panels &amp; queries but not save
+              or
+              create new dashboards.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="v-pills-five" role="tabpanel" aria-labelledby="v-pills-five-tab">
+      <div>
+        <article>
+          <h2>Singlestat Panel</h2>
+          <div class="docs-content-inner" id="doc-article-text">
+            <h1 id="singlestat-panel"> </h1>
+            <div class="docs-image docs-image--no-shadow" style="max-width: 900px">
+              <div class="screenshot" lg-uid="lg0"><img alt="" src="/assets/docs_images/singlestat-panel.png"
+                  style="width: 100%;"></div>
+            </div>
+            <p>The Singlestat Panel allows you to show the one main summary stat of a SINGLE series. It reduces the
+              series
+              into a single number (by looking at the max, min, average, or sum of values in the series). Singlestat
+              also
+              provides thresholds to color the stat or the Panel background. It can also translate the single number
+              into
+              a text value, and show a sparkline summary of the series.</p>
+            <h3 id="singlestat-panel-configuration">Singlestat Panel Configuration</h3>
+            <p>The singlestat panel has a normal query editor to allow you define your exact metric queries like many
+              other Panels. In the Options tab, you can access the Singlestat-specific functionality.</p>
+            <div class="docs-image docs-image--no-shadow" style="max-width: 900px">
+              <div class="screenshot" lg-uid="lg1"><a href="/assets/docs_images/singlestat-value-options.png" title=""
+                  lg-event-uid="&amp;2"><img alt="" src="/assets/docs_images/singlestat-value-options.png"
+                    style="width: 100%;">
+
+                </a></div>
+            </div>
+            <ol>
+              <li><strong>Stats</strong>: The Stats field let you set the function (min, max, average, current, total,
+                first, delta, range) that your entire query is reduced into a single value with. This reduces the entire
+                query into a single summary value that is displayed.
+                <ul>
+                  <li><strong>min</strong> - The smallest value in the series</li>
+                  <li><strong>max</strong> - The largest value in the series</li>
+                  <li><strong>avg</strong> - The average of all the non-null values in the series</li>
+                  <li><strong>current</strong> - The last value in the series. If the series ends on null the previous
+                    value will be used.</li>
+                  <li><strong>total</strong> - The sum of all the non-null values in the series</li>
+                  <li><strong>first</strong> - The first value in the series</li>
+                  <li><strong>delta</strong> - The total incremental increase (of a counter) in the series. An attempt
+                    is
+                    made to account for counter resets, but this will only be accurate for single instance metrics. Used
+                    to show total counter increase in time series.</li>
+                  <li><strong>diff</strong> - The difference between ‘current’ (last value) and ‘first’.</li>
+                  <li><strong>range</strong> - The difference between ‘min’ and ‘max’. Useful the show the range of
+                    change
+                    for a gauge.</li>
+                </ul>
+              </li>
+              <li><strong>Prefix/Postfix</strong>: The Prefix/Postfix fields let you define a custom label to appear
+                <em>before/after</em> the value. The <code>$__name</code> variable can be used here to use the series
+                name
+                or alias from the metric query.</li>
+              <li><strong>Units</strong>: Units are appended to the the Singlestat within the panel, and will respect
+                the
+                color and threshold settings for the value.</li>
+              <li><strong>Decimals</strong>: The Decimal field allows you to override the automatic decimal precision,
+                and
+                set it explicitly.</li>
+              <li><strong>Font Size</strong>: You can use this section to select the font size of the different texts in
+                the Singlestat Panel, i.e. prefix, value and postfix.</li>
+            </ol>
+            <h3 id="coloring">Coloring</h3>
+            <p>The coloring options of the Singlestat Panel config allow you to dynamically change the colors based on
+              the
+              Singlestat value.</p>
+            <div class="docs-image docs-image--right docs-image--no-shadow" style="max-width: 500px">
+              <div class="screenshot" lg-uid="lg2"><a href="/assets/docs_images/singlestat-color-options.png" title=""
+                  lg-event-uid="&amp;3"><img alt="" src="/assets/docs_images/singlestat-color-options.png"
+                    style="width: 100%;">
+
+                </a></div>
+            </div>
+            <ol>
+              <li><strong>Background</strong>: This checkbox applies the configured thresholds and colors to the
+                entirety
+                of the Singlestat Panel background.</li>
+              <li><strong>Thresholds</strong>: Change the background and value colors dynamically within the panel,
+                depending on the Singlestat value. The threshold field accepts <strong>2 comma-separated</strong> values
+                which represent 3 ranges that correspond to the three colors directly to the right. For example: if the
+                thresholds are 70, 90 then the first color represents &lt; 70, the second color represents between 70
+                and
+                90 and the third color represents &gt; 90.</li>
+              <li><strong>Colors</strong>: Select a color and opacity</li>
+              <li><strong>Value</strong>: This checkbox applies the configured thresholds and colors to the summary
+                stat.
+              </li>
+              <li><strong>Invert order</strong>: This link toggles the threshold color order.<br></li>
+            </ol>
+            <h3 id="spark-lines">Spark Lines</h3>
+            <p>Sparklines are a great way of seeing the historical data related to the summary stat, providing valuable
+              context at a glance. Sparklines act differently than traditional Graph Panels and do not include x or y
+              axis, coordinates, a legend, or ability to interact with the graph.</p>
+            <div class="docs-image docs-image--right docs-image--no-shadow" style="max-width: 500px">
+              <div class="screenshot" lg-uid="lg3"><a href="/assets/docs_images/singlestat-spark-options.png" title=""
+                  lg-event-uid="&amp;4"><img alt="" src="/assets/docs_images/singlestat-spark-options.png"
+                    style="width: 100%;">
+
+                </a></div>
+            </div>
+            <ol>
+              <li><strong>Show</strong>: The show checkbox will toggle whether the spark line is shown in the Panel.
+                When
+                unselected, only the Singlestat value will appear.</li>
+              <li><strong>Full Height</strong>: Check if you want the sparklines to take up the full panel height, or
+                uncheck if they should be below the main Singlestat value.</li>
+              <li><strong>Y-Min</strong>: The minimum Y value. (default auto)</li>
+              <li><strong>Y-Max</strong>: The maximum Y value. (default auto)</li>
+              <li><strong>Line Color</strong>: This color selection applies to the color of the sparkline itself.</li>
+              <li><strong>Fill Color</strong>: This color selection applies to the area below the sparkline.</li>
+            </ol>
+            <div class="clearfix"></div>
+            <blockquote>
+              <p><strong><em>Pro-tip:</em></strong> Reduce the opacity on fill colors for nice looking panels.</p>
+            </blockquote>
+            <h3 id="gauge">Gauge</h3>
+            <p>Gauges gives a clear picture of how high a value is in it’s context. It’s a great way to see if a value
+              is
+              close to the thresholds. The gauge uses the colors set in the color options.</p>
+            <div class="docs-image docs-image--right docs-image--no-shadow" style="max-width: 500px">
+              <div class="screenshot" lg-uid="lg4"><a href="/assets/docs_images/singlestat-gauge-options.png" title=""
+                  lg-event-uid="&amp;5"><img alt="" src="/assets/docs_images/singlestat-gauge-options.png"
+                    style="width: 100%;">
+
+                </a></div>
+            </div>
+            <ol>
+              <li><strong>Show</strong>: The show checkbox will toggle whether the gauge is shown in the panel. When
+                unselected, only the Singlestat value will appear.</li>
+              <li><strong>Min/Max</strong>: This sets the start and end point for the gauge.</li>
+              <li><strong>Threshold Labels</strong>: Check if you want to show the threshold labels. Thresholds are set
+                in
+                the color options.</li>
+              <li><strong>Threshold Markers</strong>: Check if you want to have a second meter showing the thresholds.
+              </li>
+            </ol>
+            <div class="clearfix"></div>
+            <h3 id="value-range-to-text-mapping">Value/Range to text mapping</h3>
+            <div class="docs-image docs-image--right docs-image--no-shadow">
+              <div class="screenshot" lg-uid="lg5"><a href="/assets/docs_images/singlestat-value-mapping.png" title=""
+                  lg-event-uid="&amp;6"><img alt="" src="/assets/docs_images/singlestat-value-mapping.png"
+                    style="width: 100%;">
+
+                </a></div>
+            </div>
+            <p>Value/Range to text mapping allows you to translate the value of the summary stat into explicit text. The
+              text will respect all styling, thresholds and customization defined for the value. This can be useful to
+              translate the number of the main Singlestat value into a context-specific human-readable word or message.
+            </p>
+            <div class="clearfix"></div>
+            <h2 id="troubleshooting">Troubleshooting</h2>
+            <h3 id="multiple-series-error">Multiple Series Error</h3>
+            <div class="docs-image docs-image--right docs-image--no-shadow">
+              <div class="screenshot" lg-uid="lg6"><a href="/assets/docs_images/singelstat-multiple-series-error.png"
+                  title="" lg-event-uid="&amp;7"><img alt=""
+                    src="/assets/docs_images/singelstat-multiple-series-error.png" style="width: 100%;">
+
+                </a></div>
+            </div>
+            <p>iron-iq 2.5 introduced stricter checking for multiple-series on singlestat panels. In previous versions,
+              the panel logic did not verify that only a single series was used, and instead, displayed the first series
+              encountered. Depending on your data source, this could have lead to inconsistent data being shown and/or a
+              general confusion about which metric was being displayed.</p>
+            <p>To fix your singlestat panel:</p>
+            <ul>
+              <li>
+                <p>Edit your panel by clicking the Panel Title and selecting <em>Edit</em>.</p>
+              </li>
+              <li>
+                <p>Do you have multiple queries in the metrics tab?</p>
+                <ul>
+                  <li>Solution: Select a single query to visualize. You can toggle whether a query is visualized by
+                    clicking the eye icon on each line. If the error persists, continue to the next solution.</li>
+                </ul>
+              </li>
+              <li>
+                <p>Do you have one query?</p>
+                <ul>
+                  <li>Solution: This likely means your query is returning multiple series. You will want to reduce this
+                    down to a single series. This can be accomplished in many ways, depending on your data source. Some
+                    common practices include summing the series, averaging or any number of other functions. Consult the
+                    documentation for your data source for additional information.</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="v-pills-six" role="tabpanel" aria-labelledby="v-pills-six-tab">
+      <div>
+        <article>
+          <h2>Table Panel</h2>
+          <div class="docs-content-inner" id="doc-article-text">
+            <h1 id="table-panel"></h1>
+
+            <p>The table panel is very flexible, supporting both multiple modes for time series as well as for table,
+              annotation and raw JSON data. It also provides date formatting and value formatting and coloring options.
+            </p>
+            <p>To view table panels in action and test different configurations with sample data, check out the Table
+              Panel Showcase in the iron-iq
+              <a>
+                Playground.
+              </a></p>
+            <h2 id="querying-data">Querying Data</h2>
+            <p>The table panel displays the results of a query specified in the <strong>Metrics</strong> tab. The result
+              being displayed depends on the datasource and the query, but generally there is one row per datapoint,
+              with
+              extra columns for associated keys and values, as well as one column for the numeric value of the
+              datapoint.
+              You can change the behavior in the section <strong>Data to Table</strong> below.</p>
+            <h3 id="merge-multiple-queries-per-table">Merge Multiple Queries per Table</h3>
+
+            <p>Sometimes it is useful to display the results of multiple queries in the same table on corresponding
+              rows,
+              e.g., when comparing capacity and actual usage of resources. In this example usage and capacity are
+              metrics
+              that will have corresponding datapoints, while their associated keys and values can be used to match them.
+              (This matching is only available with the <strong>Table Transform</strong> set to <strong>Table</strong>.)
+            </p>
+            <p>In its simplest case, both queries return time-series data with a numeric value and a timestamp. If the
+              timestamps are the same, datapoints will be matched and rendered on the same row. Some datasources return
+              keys and values (labels, tags) associated with the datapoint. These are being matched as well if they are
+              present in both results and have the same value. The following datapoints will end up on the same row with
+              one time column, two label columns (“host” and “job”) and two value columns:</p>
+            <!-- <pre><code>Datapoint for query A: {time: 1, host: "node-2", job: "job-8", value: 3}
+  Datapoint for query B: {time: 1, host: "node-2", value: 4}
+  </code></pre> -->
+            <p>The following two results cannot be matched and will be rendered on separate rows:</p>
+            <!-- <pre><code>Different time
+  Datapoint for query A: {time: 1, host: "node-2", job: "job-8", value: 3}
+  Datapoint for query B: {time: 2, host: "node-2", value: 4}
+  
+  Different label "host"
+  Datapoint for query A: {time: 1, host: "node-2", job: "job-8", value: 3}
+  Datapoint for query B: {time: 1, host: "node-9", value: 4}
+  </code></pre> -->
+            <p>You can still merge both of the above cases by changing the conflicting column’s <strong>Type</strong> to
+              <strong>hidden</strong> in the <strong>Column Styles</strong>.</p>
+            <p>Note that if each datapoint of your query results have multiple value fields like max, min, mean, etc.,
+              they will likely have different values and therefore will not match and render on separate rows. If you
+              intend for rows to be merged but see them rendered on separate rows, check the query results in the
+              <strong>Query Inspector</strong> for field values being identical across datapoints that should be merged
+              into a row.</p>
+            <h2 id="options-overview">Options overview</h2>
+            <p>The table panel has many ways to manipulate your data for optimal presentation.</p>
+            <div class="docs-image docs-image--no-shadow" style="max-width: 500px">
+              <div title="" lg-event-uid="&amp;1"><img alt="" src="/images/docs_images/table_options.png"
+                  style="width: 45%;">
+
+              </div>
+            </div>
+            <p></p>
+            <ol>
+              <li><strong>Data</strong>: Control how your query is transformed into a table.</li>
+              <li><strong>Paging</strong>: Table display options.</li>
+            </ol>
+            <h2 id="data-to-table">Data to Table<a href="#data-to-table" class="docs-anchor-link"></a></h2>
+            <div class="docs-image docs-image--right" style="max-width: 500px">
+              <div class="screenshot" lg-uid="lg2"><a href="/images/docs_images/table_data_options.png" title=""
+                  lg-event-uid="&amp;2"><img alt="" src="/images/docs_images/table_data_options.png"
+                    style="width: 45%;">
+
+                </a></div>
+            </div>
+            <p>The data section contains the <strong>To Table Transform (1)</strong>. This is the primary option for how
+              your data/metric query should be transformed into a table format. The <strong>Columns (2)</strong> option
+              allows you to select what columns you want in the table. Only applicable for some transforms.</p>
+            <div class="clearfix"></div>
+            <h3 id="time-series-to-rows">Time series to rows
+            </h3>
+            <div class="docs-image">
+              <div title="" lg-event-uid="&amp;3"><img alt="" src="/images/docs_images/table_ts_to_rows.png"
+                  style="width: 45%;">
+
+              </div>
+            </div>
+            <p>In the most simple mode you can turn time series to rows. This means you get a <strong>Time</strong>,
+              <strong>Metric</strong> and a <strong>Value</strong> column. Where <strong>Metric</strong> is the name of
+              the time series.</p>
+            <h3 id="time-series-to-columns">Time series to columns</h3>
+            <div class="docs-image">
+              <div class="screenshot" lg-uid="lg4"><a href="/images/docs_images/table_ts_to_columns.png" title=""
+                  lg-event-uid="&amp;4"><img alt="" src="/images/docs_images/table_ts_to_columns.png"
+                    style="width: 45%;">
+
+                </a></div>
+            </div>
+            <p>This transform allows you to take multiple time series and group them by time. Which will result in the
+              primary column being <strong>Time</strong> and a column for each time series.</p>
+            <h3 id="time-series-aggregations">Time series aggregations</h3>
+            <div class="docs-image">
+              <div class="screenshot" lg-uid="lg5"><a href="/images/docs_images/table_ts_to_aggregations.png" title=""
+                  lg-event-uid="&amp;5"><img alt="" src="/images/docs_images/table_ts_to_aggregations.png"
+                    style="width: 45%;">
+
+                </a></div>
+            </div>
+            <p>This table transformation will lay out your table into rows by metric, allowing columns of
+              <strong>Avg</strong>, <strong>Min</strong>, <strong>Max</strong>, <strong>Total</strong>,
+              <strong>Current</strong> and <strong>Count</strong>. More than one column can be added.</p>
+            <h3 id="annotations">Annotations</h3>
+            <div class="docs-image">
+              <div class="screenshot" lg-uid="lg6"><a href="/images/docs_images/table_annotations.png" title=""
+                  lg-event-uid="&amp;6"><img alt="" src="/images/docs_images/table_annotations.png" style="width: 45%;">
+
+                </a></div>
+            </div>
+            <p>If you have annotations enabled in the dashboard you can have the table show them. If you configure this
+              mode then any queries you have in the metrics tab will be ignored.</p>
+            <h3 id="json-data">JSON Data</h3>
+            <div class="docs-image" style="max-width: 500px">
+              <div class="screenshot" lg-uid="lg7"><a href="/images/docs_images/table_json_data.png" title=""
+                  lg-event-uid="&amp;7"><img alt="" src="/images/docs_images/table_json_data.png" style="width: 100%;">
+
+                </a></div>
+            </div>
+            <p>If you have an Elasticsearch <strong>Raw Document</strong> query or an Elasticsearch query without a
+              <strong>date histogram</strong> use this transform mode and pick the columns using the
+              <strong>Columns</strong> section.</p>
+            <div class="docs-image">
+              <div class="screenshot" lg-uid="lg8"><a href="/images/docs_images/elastic_raw_doc.png" title=""
+                  lg-event-uid="&amp;8"><img alt="" src="/images/docs_images/elastic_raw_doc.png" style="width: 50%;">
+
+                </a></div>
+            </div>
+            <h2 id="table-display">Table Display</h2>
+            <div class="docs-image docs-image--no-shadow docs-image--right" style="max-width: 350px">
+              <div class="screenshot" lg-uid="lg9"><a href="/images/docs_images/table_paging.png" title=""
+                  lg-event-uid="&amp;9"><img alt="" src="/images/docs_images/table_paging.png" style="width: 100%;">
+
+                </a></div>
+            </div>
+            <ol>
+              <li><strong>Rows Per Page</strong>: The table display fields allow you to control how many rows per page
+                there should be. For example, if your table had 95 records with a rows per page value of 10, your table
+                would be split across 10 pages.</li>
+              <li><strong>Scroll</strong>: The scroll bar checkbox toggles the ability to scroll within the panel, when
+                unchecked, the panel height will grow to display all rows.</li>
+              <li><strong>Font Size</strong>: The font size field allows you to increase or decrease the size for the
+                panel, relative to the default font size.</li>
+            </ol>
+            <h2 id="column-styles">Column Styles</h2>
+            <p>The column styles allow you control how dates and numbers are formatted.</p>
+            <div class="docs-image docs-image--no-shadow">
+              <div><a href="/images/docs_images/table_column_styles.png" title="" lg-event-uid="&amp;10"><img alt=""
+                    src="/images/docs_images/table_column_styles.png" style="width: 50%;">
+
+                </a></div>
+            </div>
+            <ol>
+              <li><strong>Name or regex</strong>: The Name or Regex field controls what columns the rule should be
+                applied
+                to. The regex or name filter will be matched against the column name not against column values.</li>
+              <li><strong>Column Header</strong>: Title for the column, when using a Regex the title can include
+                replacement strings like <code>$1</code>.</li>
+              <li><strong>Add column style rule</strong>: Add new column rule.</li>
+              <li><strong>Thresholds and Coloring</strong>: Specify color mode and thresholds limits.</li>
+              <li><strong>Type</strong>: The three supported types of types are <strong>Number</strong>,
+                <strong>String</strong> and <strong>Date</strong>. <strong>Unit</strong> and <strong>Decimals</strong>:
+                Specify unit and decimal precision for numbers. <strong>Format</strong>: Specify date format for dates.
+              </li>
+            </ol>
+            <h3 id="string">String</h3>
+            <h4 id="value-range-to-text-mapping">Value/Range to text mapping</h4>
+            <div class="docs-image docs-image--right docs-image--no-shadow">
+              <div><a href="/images/docs_images/table-value-mapping.png" title="" lg-event-uid="&amp;11"><img alt=""
+                    src="/images/docs_images/table-value-mapping.png" style="width: 50%;">
+
+                </a></div>
+            </div>
+            <p>Value/range to text mapping allows you to translate numeric values into explicit text. The text will
+              respect all styling, thresholds and customization defined for the value. This can be useful to translate
+              the
+              numeric values into a context-specific human-readable word or message.</p>
+            <div class="clearfix"></div>
+          </div>
+
+        </article>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="v-pills-seven" role="tabpanel" aria-labelledby="v-pills-seven-tab">
+      <div>
+        <article>
+          <h2>Heatmap Panel</h2>
+          <div class="docs-content-inner" id="doc-article-text">
+            <h1 id="heatmap-panel"></h1>
+            <p><img src="/assets/docs_images/heatmap_panel_cover.jpg" style="width: 100%;" alt=""></p>
+            <p>The Heatmap panel allows you to view histograms over time. To fully understand and use this panel you
+              need
+              understand what Histograms are and how they are created. Read on below to for a quick introduction to the
+              term Histogram.</p>
+            <h2 id="histograms-and-buckets">Histograms and buckets</h2>
+            <p>A histogram is a graphical representation of the distribution of numerical data. You group values into
+              buckets (some times also called bins) and then count how many values fall into each bucket. Instead of
+              graphing the actual values you then graph the buckets. Each bar represents a bucket and the bar height
+              represents the frequency (i.e. count) of values that fell into that bucket’s interval.</p>
+            <p>Example Histogram:</p>
+            <p><img src="/assets/docs_images/heatmap_histogram.png" style="width: 100%;" alt=""></p>
+            <p>The above histogram shows us that most value distribution of a couple of time series. We can easily see
+              that most values land between 240-300 with a peak between 260-280. Histograms just look at value
+              distributions over specific time range. So you cannot see any trend or changes in the distribution over
+              time, this is where heatmaps become useful.</p>
+            <h2 id="heatmap">Heatmap</h2>
+            <p>A Heatmap is like a histogram but over time where each time slice represents its own histogram. Instead
+              of
+              using bar height as a representation of frequency you use cells and color the cell proportional to the
+              number of values in the bucket.</p>
+            <p>Example:</p>
+            <p><img src="/assets/docs_images/heatmap_histogram_over_time.png" style="width: 100%;" alt=""></p>
+            <p>Here we can clearly see what values are more common and how they trend over time.</p>
+            <h2 id="data-options">Data Options</h2>
+            <p>Data and bucket options can be found in the <code>Axes</code> tab.</p>
+            <h3 id="data-formats">Data Formats</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>Data format</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><em>Time series</em></td>
+                  <td>iron-iq does the bucketing by going through all time series values. The bucket sizes &amp;
+                    intervals
+                    will be determined using the Buckets options.</td>
+                </tr>
+                <tr>
+                  <td><em>Time series buckets</em></td>
+                  <td>Each time series already represents a Y-Axis bucket. The time series name (alias) needs to be a
+                    numeric value representing the upper or lower interval for the bucket. iron-iq does no bucketing so
+                    the bucket size options are hidden.</td>
+                </tr>
+              </tbody>
+            </table>
+            <h3 id="bucket-bound">Bucket bound</h3>
+            <p>When Data format is <em>Time series buckets</em> datasource returns series with names representing bucket
+              bound. But depending on datasource, a bound may be <em>upper</em> or <em>lower</em>. This option allows to
+              adjust a bound type. If <em>Auto</em> is set, a bound option will be chosen based on panels’ datasource
+              type.</p>
+            <h3 id="bucket-size">Bucket Size</h3>
+            <p>The Bucket count &amp; size options are used by iron-iq to calculate how big each cell in the heatmap is.
+              You can define the bucket size either by count (the first input box) or by specifying a size interval. For
+              the Y-Axis the size interval is just a value but for the X-bucket you can specify a time range in the
+              <em>Size</em> input, for example, the time range <code>1h</code>. This will make the cells 1h wide on the
+              X-axis.</p>
+            <h3 id="pre-bucketed-data">Pre-bucketed data</h3>
+            <p>If you have a data that is already organized into buckets you can use the <code>Time series
+                buckets</code>
+              data format. This format requires that your metric query return regular time series and that each time
+              series has a numeric name that represent the upper or lower bound of the interval.</p>
+            <p>There are a number of datasources supporting histogram over time like Elasticsearch (by using a Histogram
+              bucket aggregation) or Prometheus (with a metric type and
+              <em>Format as</em> option set to Heatmap). But generally, any datasource could be used if it meets the
+              requirements: returns series with names representing bucket bound or returns series sorted by the bound in
+              ascending order.</p>
+            <p>With Elasticsearch you control the size of the buckets using the Histogram interval (Y-Axis) and the Date
+              Histogram interval (X-axis).</p>
+            <p><img src="/assets/docs_images/elastic_histogram.png" style="width: 100%;" alt="Elastic histogram"></p>
+            <p>With Prometheus you can only control X-axis by adjusting <em>Min step</em> and <em>Resolution</em>
+              options.
+            </p>
+            <p><img src="/assets/docs_images/prometheus_histogram.png" style="width: 100%;" alt="Prometheus histogram">
+            </p>
+            <h2 id="display-options">Display Options</h2>
+            <p>In the heatmap <em>Display</em> tab you define how the cells are rendered and what color they are
+              assigned.
+            </p>
+            <h3 id="color-mode-spectrum">Color Mode &amp; Spectrum</h3>
+            <div class="inline-imgbox-right" style="max-width: 40%">
+              <div class="screenshot" lg-uid="lg0"><a href="/assets/docs_images/heatmap_scheme.png"
+                  title="Color spectrum" lg-event-uid="&amp;1"><img alt="Color spectrum"
+                    src="/assets/docs_images/heatmap_scheme.png" style="width: 100%;">
+
+                </a></div>
+            </div>
+            <p>The color spectrum controls the mapping between value count (in each bucket) and the color assigned to
+              each
+              bucket. The left most color on the spectrum represents the minimum count and the color on the right most
+              side represents the maximum count. Some color schemes are automatically inverted when using the light
+              theme.
+            </p>
+            <p>You can also change the color mode to <code>Opacity</code>. In this case, the color will not change but
+              the
+              amount of opacity will change with the bucket count.</p>
+            <h2 id="raw-data-vs-aggregated">Raw data vs aggregated</h2>
+            <p>If you use the heatmap with regular time series data (not pre-bucketed). Then it’s important to keep in
+              mind that your data is often already by aggregated by your time series backend. Most time series queries
+              do
+              not return raw sample data but include a group by time interval or maxDataPoints limit coupled with an
+              aggregation function (usually average).</p>
+            <p>This all depends on the time range of your query of course. But the important point is to know that the
+              Histogram bucketing that iron-iq performs may be done on already aggregated and averaged data. To get more
+              accurate heatmaps it is better to do the bucketing during metric collection or store the data in
+              Elasticsearch, or in the other data source which supports doing Histogram bucketing on the raw data.</p>
+            <p>If you remove or lower the group by time (or raise maxDataPoints) in your query to return more data
+              points
+              your heatmap will be more accurate but this can also be very CPU &amp; Memory taxing for your browser and
+              could cause hangs and crashes if the number of data points becomes unreasonably large.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="v-pills-eight" role="tabpanel" aria-labelledby="v-pills-eight-tab">
+      <div>
+        <article>
+          <h2>Alert List Panel</h2>
+          <div class="docs-content-inner" id="doc-article-text">
+            <h1 id="alert-list-panel"></h1>
+            <div class="docs-image" style="max-width: 850px">
+              <div title="" lg-event-uid="&amp;1"><img alt="" src="/images/docs_images/alert-list-panel.png"
+                  style="width: 100%;">
+
+              </div>
+            </div>
+            <p>The alert list panel allows you to display your dashboards alerts. The list can be configured to show
+              current state or recent state changes.</p>
+            <h2 id="alert-list-options">Alert List Options
+            </h2>
+            <div class="docs-image docs-image--no-shadow docs-image--right" style="max-width: 600px">
+              <div class="screenshot" lg-uid="lg1"><a href="/images/docs_images/alert-list-options.png" title=""
+                  lg-event-uid="&amp;2"><img alt="" src="/images/docs_images/alert-list-options.png"
+                    style="width: 100%;">
+
+                </a></div>
+            </div>
+            <ol>
+              <li><strong>Show</strong>: Lets you choose between current state or recent state changes.</li>
+              <li><strong>Max Items</strong>: Max items set the maximum of items in a list.</li>
+              <li><strong>Sort Order</strong>: Lets you sort your list alphabetically(asc/desc) or by importance.</li>
+              <li><strong>Alerts From</strong> This Dashboard`: Shows alerts only from the dashboard the alert list is
+                in.
+              </li>
+              <li><strong>State Filter</strong>: Here you can filter your list by one or more parameters.</li>
+            </ol>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="v-pills-nine" role="tabpanel" aria-labelledby="v-pills-nine-tab">
+      <div>
+        <article>
+          <h2>Dashboard List Panel</h2>
+          <div class="docs-content-inner" id="doc-article-text">
+            <h1 id="dashboard-list-panel"></h1>
+            <div class="docs-image" style="max-width: 850px">
+              <div class="screenshot" lg-uid="lg0"><a href="/images/docs_images/dashboard-list-panels.png" title=""
+                  lg-event-uid="&amp;1"><img alt="" src="/images/docs_images/dashboard-list-panels.png"
+                    style="width: 100%;">
+
+                </a></div>
+            </div>
+            <p>The dashboard list panel allows you to display dynamic links to other dashboards. The list can be
+              configured to use starred dashboards, recently viewed dashboards, a search query and/or dashboard tags.
+            </p>
+            <blockquote>
+              <p>On each dashboard load, the dashlist panel will re-query the dashboard list, always providing the most
+                up
+                to date results.</p>
+            </blockquote>
+            <h2 id="dashboard-list-options">Dashboard List Options</h2>
+            <div class="docs-image docs-image--no-shadow docs-image--right">
+              <div class="screenshot" lg-uid="lg1"><a href="/images/docs_images/dashboard-list-options.png" title=""
+                  lg-event-uid="&amp;2"><img alt="" src="/images/docs_images/dashboard-list-options.png"
+                    style="width: 100%;">
+
+                </a></div>
+            </div>
+            <ol>
+              <li><strong>Starred</strong>: The starred dashboard selection displays starred dashboards in alphabetical
+                order.</li>
+              <li><strong>Recently Viewed</strong>: The recently viewed dashboard selection displays recently viewed
+                dashboards in alphabetical order.</li>
+              <li><strong>Search</strong>: The search dashboard selection displays dashboards by search query or tag(s).
+              </li>
+              <li><strong>Show Headings</strong>: When show headings is ticked the chosen list selection(Starred,
+                Recently
+                Viewed, Search) is shown as a heading.</li>
+              <li><strong>Max Items</strong>: Max items set the maximum of items in a list.</li>
+              <li><strong>Query</strong>: Here is where you enter your query you want to search by. Queries are
+                case-insensitive, and partial values are accepted.</li>
+              <li><strong>Tags</strong>: Here is where you enter your tag(s) you want to search by. Note that existing
+                tags will not appear as you type, and <em>are</em> case sensitive. To see a list of existing tags, you
+                can
+                always return to the dashboard, open the Dashboard Picker at the top and click <code>tags</code> link in
+                the search bar.</li>
+            </ol>
+            <div class="clearfix"></div>
+            <blockquote>
+              <p>When multiple tags and strings appear, the dashboard list will display those matching ALL conditions.
+              </p>
+            </blockquote>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="v-pills-ten" role="tabpanel" aria-labelledby="v-pills-ten-tab">
+      <div>
+        <article>
+          <h2>Text Panel</h2>
+          <div class="docs-content-inner" id="doc-article-text">
+            <h1 id="text-panel"></h1>
+            <p>The text panel lets you make information and description panels etc. for your dashboards. There are three
+              modes you can write in: markdown, HTML or text.</p>
+            <h2 id="text-options">Text Options</h2>
+            <div class="docs-image docs-image--no-shadow" style="max-width: 600px">
+              <div title="" lg-event-uid="&amp;1"><img alt="" src="/images/docs_images/text-options.png"
+                  style="width: 100%;">
+
+              </div>
+            </div>
+            <ol>
+              <li><strong>Mode</strong>: Here you can choose between markdown, HTML or text.</li>
+              <li><strong>Content</strong>: Here you write your content.</li>
+            </ol>
+          </div>
+
+        </article>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="v-pills-twon" role="tabpanel" aria-labelledby="v-pills-twon-tab">
+      <div>
+        <article>
+          <h2> Annotations </h2>
+          <div class="docs-content-inner" id="doc-article-text">
+            <h1 id="annotations"></h1>
+            <div class="docs-image" style="max-width: 800px">
+              <div class="screenshot" lg-uid="lg0"><a href="/assets/docs_images/annotations.png" title=""
+                  lg-event-uid="&amp;1"><img alt="" src="/assets/docs_images/annotations.png">
+                  <!-- <div class="screenshot__zoom"><img src="/images/docs_images/zoom.png"></div> - -->
+                </a></div>
+            </div>
+            <p>Annotations provide a way to mark points on the graph with rich events. When you hover over an annotation
+              you can get event description and event tags. The text field can include links to other systems with more
+              detail.</p>
+            <h2 id="native-annotations">Native annotations
+            </h2>
+            <p>iron-iq comes with a native annotation store and the ability to add annotation events directly from
+              the graph panel or via the HTTP API.</p>
+            <h2 id="adding-annotations">Adding annotations
+            </h2>
+            <p>By holding down <strong>CTRL</strong> or <strong>CMD</strong> + Click. Add tags to the annotation will
+              make
+              it searchable from other dashboards.</p>
+            <div class="docs-image" style="max-width: 600px">
+              <div class="screenshot" lg-uid="lg1"><a href="/assets/docs_images/annotation.gif" title=""
+                  lg-event-uid="&amp;2"><img alt="" src="/assets/docs_images/annotation-still.png"
+                    class="screenshot__still">
+                  <img alt="" src="/assets/docs_images/docs_images/annotation.gif" class="screenshot__animated-gif">
+                  <div class="screenshot__play"><i class="fa fa-play"></i></div>
+                </a></div>
+            </div>
+            <h3 id="adding-regions-events">Adding regions events</h3>
+            <p>You can also hold down <strong>CTRL</strong> or <strong>CMD</strong> and select region to create a region
+              annotation.</p>
+            <div class="docs-image" style="max-width: 600px">
+              <div class="screenshot" lg-uid="lg2"><a href="/assets/docs_images/region-annotation.gif" title=""
+                  lg-event-uid="&amp;3"><img alt="" src="/assets/docs_images/region-annotation-still.png"
+                    class="screenshot__still"> <img alt="" src="/assets/docs_images/region-annotation.gif"
+                    class="screenshot__animated-gif">
+                  <div class="screenshot__play"><i class="fa fa-play"></i></div>
+                </a></div>
+            </div>
+            <h3 id="built-in-query">Built in query</h3>
+            <p>After you added an annotation they will still be visible. This is due to the built in annotation query
+              that
+              exists on all dashboards. This annotation query will fetch all annotation events that originate from the
+              current dashboard and show them on the panel where they where created. This includes alert state history
+              annotations. You can stop annotations from being fetched &amp; drawn by opening the
+              <strong>Annotations</strong> settings (via Dashboard cogs menu) and modifying the query named
+              <code>Annotations &amp; Alerts (Built-in)</code>.</p>
+            <p>When you copy a dashboard using the <strong>Save As</strong> feature it will get a new dashboard id so
+              annotations created on source dashboard will no longer be visible on the copy. You can still show them if
+              you add a new <strong>Annotation Query</strong> and filter by tags. But this only works if the annotations
+              on the source dashboard had tags to filter by.</p>
+            <h3 id="query-by-tag">Query by tag</h3>
+            <p>You can create new annotation queries that fetch annotations from the native annotation store via the
+              <code>-- iron-iq --</code> data source and by setting <em>Filter by</em> to <code>Tags</code>. Specify at
+              least one tag. For example create an annotation query name <code>outages</code> and specify a tag named
+              <code>outage</code>. This query will show all annotations you create (from any dashboard or via API) that
+              have the <code>outage</code> tag. By default, if you add multiple tags in the annotation query, iron-iq
+              will
+              only show annotations that have all the tags you supplied. You can invert the behavior by enabling
+              <code>Match any</code> which means that iron-iq will show annotations that contains at least one of the
+              tags
+              you supplied.</p>
+            <p>In iron-iq v5.3+ it’s possible to use template variables in the tag query. So if you have a dashboard
+              showing stats for different services and a template variable that dictates which services to show, you can
+              now use the same template variable in your annotation query to only show annotations for those services.
+            </p>
+            <div class="docs-image" style="max-width: 600px">
+              <div class="screenshot" lg-uid="lg3"><a href="/assets/docs_images/annotation_tag_filter_variable.png"
+                  title="" lg-event-uid="&amp;4"><img alt=""
+                    src="/assets/docs_images/annotation_tag_filter_variable.png">
+                  <!-- {{!-- <div class="screenshot__zoom"><img src="/assets/docs_images/zoom.png"></div> --}} -->
+                </a></div>
+            </div>
+            <h2 id="querying-other-data-sources">Querying other data sources</h2>
+            <p>Annotation events are fetched via annotation queries. To add a new annotation query to a dashboard open
+              the
+              dashboard settings menu, then select <code>Annotations</code>. This will open the dashboard annotations
+              settings view. To create a new annotation query hit the <code>New</code> button.</p>
+            <!--![](/img/docs/v50/annotation_new_query.png)-->
+            <div class="docs-image" style="max-width: 600px">
+              <div class="screenshot" lg-uid="lg4"><a href="/assets/docs_images/annotation_new_query.png" title=""
+                  lg-event-uid="&amp;5"><img alt="" src="/assets/docs_images/annotation_new_query.png">
+                  <!-- {{!-- <div class="screenshot__zoom"><img src="/images/docs_images/zoom.png"></div> --}} -->
+                </a></div>
+            </div>
+            <p>Specify a name for the annotation query. This name is given to the toggle (checkbox) that will allow you
+              to
+              enable/disable showing annotation events from this query. For example you might have two annotation
+              queries
+              named <code>Deploys</code> and <code>Outages</code>. The toggles will allow you to decide what annotations
+              to show.</p>
+            <h3 id="annotation-query-details">Annotation query details</h3>
+            <p>The annotation query options are different for each data source.</p>
+            <ul>
+              <li>Graphite annotation
+                queries</li>
+              <li>Elasticsearch
+                annotation queries</li>
+              <li>InfluxDB annotation
+                queries</li>
+              <li>Prometheus annotation
+                queries</li>
+              <li>MySQL annotation queries
+              </li>
+              <li>Postgres annotation
+                queries</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="v-pills-threen" role="tabpanel" aria-labelledby="v-pills-threen-tab">
+      <div>
+        <article>
+          <h2>Dashboard Folders</h2>
+          <div class="docs-content-inner" id="doc-article-text">
+            <h1 id="dashboard-folders"></h1>
+            <p>Folders are a way to organize and group dashboards - very useful if you have a lot of dashboards or
+              multiple teams using the same iron-iq instance.</p>
+            <h2 id="how-to-create-a-folder">How To Create A Folder</h2>
+            <ul>
+              <li>Create a folder by using the Create Folder link in the side menu (under the create menu (+ icon))</li>
+              <li>Use the create Folder button on the Manage Dashboards page.</li>
+              <li>When saving a dashboard, you can either choose a folder for the dashboard to be saved in or create a
+                new
+                folder</li>
+            </ul>
+            <p>On the Create Folder page, fill in a unique name for the folder and press Create.</p>
+            <h2 id="manage-dashboards">Manage Dashboards</h2>
+            <div class="docs-image docs-image--right" style="max-width: 300px">
+              <div class="screenshot" lg-uid="lg0"><a href="/images/docs_images/manage_dashboard_menu.png" title=""
+                  lg-event-uid="&amp;1"><img alt="" src="/assets/docs_images/manage_dashboard_menu.png">
+                  <!-- {{!-- <div class="screenshot__zoom"><img src="/images/docs_images/zoom.png"></div> --}} -->
+                </a></div>
+            </div>
+            <p>There is a new Manage Dashboards page where you can carry out a variety of tasks:</p>
+            <ul>
+              <li>create a folder</li>
+              <li>create a dashboard</li>
+              <li>move dashboards into folders</li>
+              <li>delete multiple dashboards</li>
+              <li>navigate to a folder page (where you can set permissions for a folder and/or its dashboards)</li>
+            </ul>
+            <h2 id="dashboard-folder-page">Dashboard Folder Page</h2>
+            <p>You reach the dashboard folder page by clicking on the cog icon that appears when you hover over a folder
+              in the dashboard list in the search result or on the Manage dashboards page.</p>
+            <p>The Dashboard Folder Page is similar to the Manage Dashboards page and is where you can carry out the
+              following tasks:</p>
+            <ul>
+              <li>Allows you to move or delete dashboards in a folder.</li>
+              <li>Rename a folder (under the Settings tab).</li>
+              <li>Set permissions for the folder (inherited by dashboards in the folder).</li>
+            </ul>
+            <h2 id="permissions">Permissions</h2>
+            <p>Permissions can assigned to a folder and inherited by the containing dashboards. An Access Control List
+              (ACL) is used where <strong>Organization Role</strong>, <strong>Team</strong> and Individual
+              <strong>User</strong> can be assigned permissions. </p>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="v-pills-fourn" role="tabpanel" aria-labelledby="v-pills-fourn-tab">
+      <div>
+        <article>
+          <h2>Playlist</h2>
+          <div class="docs-content-inner" id="doc-article-text">
+            <h1 id="playlist"></h1>
+            <p>The Playlist is a special type of Dashboard that rotates through a list of Dashboards. A Playlist can be
+              a
+              great way to build situational awareness, or just show off your metrics to your team or visitors.</p>
+            <p>Since iron-iq automatically scales Dashboards to any resolution they’re perfect for big screens!</p>
+            <h2 id="creating-a-playlist">Creating a Playlist
+            </h2>
+            <div class="docs-image docs-image--right" style="max-width: 25rem">
+              <div class="screenshot" lg-uid="lg0"><a href="/images/docs_images/playlist.png" title=""
+                  lg-event-uid="&amp;1"><img alt="" src="/images/docs_images/playlist.png">
+                  <!-- {{!-- <div class="screenshot__zoom"><img src="/images/docs_images/zoom.png"></div> --}} -->
+                </a></div>
+            </div>
+            <p>The Playlist feature can be accessed from iron-iq’s sidemenu, in the Dashboard submenu.</p>
+            <p>Click on “New Playlist” button to create a new playlist. Firstly, name your playlist and configure a time
+              interval for iron-iq to wait on a particular Dashboard before advancing to the next one on the Playlist.
+            </p>
+            <p>You can search Dashboards by name (or use a regular expression), and add them to your Playlist. Or you
+              could add tags which will include all the dashboards that belongs to a tag when the playlist start
+              playing.
+              By default, your starred dashboards will appear as candidates for the Playlist.</p>
+            <p>Be sure to click the “Add to dashboard” button next to the Dashboard name to add it to the Playlist. To
+              remove a dashboard from the playlist click on “Remove[x]” button from the playlist.</p>
+            <p>Since the Playlist is basically a list of Dashboards, ensure that all the Dashboards you want to appear
+              in
+              your Playlist are added here.</p>
+            <h2 id="saving-the-playlist">Saving the playlist
+            </h2>
+            <p>Once all the wanted dashboards are added to a playlist, you can save this playlist by clicking on the
+              green
+              “Save” button. This will generate a unique URL for you playlist which can be shared if needed. Click on
+              the
+              generated URL or on the “Play” button from the “Saved playlists” list to start the playlist. If you want
+              to
+              share the URL, right click on the URL and copy the URL link and share.</p>
+            <h2 id="starting-the-playlist">Starting the playlist</h2>
+            <p>Also, if you want, you can start the playlist without saving it by clicking on the green “Start” button
+              at
+              the bottom.</p>
+            <h2 id="controlling-the-playlist">Controlling the Playlist</h2>
+            <p>Playlists can also be manually controlled utilizing the Playlist controls at the top of screen when in
+              Playlist mode.</p>
+            <p>Click the stop button to stop the Playlist, and exit to the current Dashboard. Click the next button to
+              advance to the next Dashboard in the Playlist. Click the back button to rewind to the previous Dashboard
+              in
+              the Playlist.</p>
+            <h2 id="tv-or-kiosk-mode">TV or Kiosk Mode</h2>
+            <p>In TV mode the top navbar, row &amp; panel controls will all fade to transparent.</p>
+            <p>This happens automatically after one minute of user inactivity but can also be toggled manually with the
+              <code>d v</code> sequence shortcut, or by appending the parameter <code>inactive</code> to the dashboard
+              URL. Any mouse movement or keyboard action will restore navbar &amp; controls.</p>
+            <p>Another feature is the kiosk mode - in kiosk mode the navbar is completely hidden/removed from view. This
+              can be enabled with the <code>d k</code> shortcut.</p>
+            <p>To put a playlist into kiosk mode, use the <code>d k</code> shortcut after the playlist has started. The
+              same shortcut will toggle the playlist out of kiosk mode.</p>
+            <h3 id="linking-to-the-playlist-in-kiosk-mode">Linking to the Playlist in Kiosk Mode</h3>
+            <p>If you want to create a link to the playlist with kiosk mode enabled:</p>
+            <ol>
+              <li>Copy the Start Url (by right clicking on the Play button and choosing Copy link address).</li>
+              <li>Add the <code>kiosk</code> parameter to the url.</li>
+            </ol>
+
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="v-pills-fiven" role="tabpanel" aria-labelledby="v-pills-fiven-tab">
+      <div>
+        <article>
+          <h2>Search</h2>
+          <div class="docs-content-inner" id="doc-article-text">
+            <h1 id="dashboard-search"></h1>
+            <p>Dashboards can be searched by the dashboard name, filtered by one (or many) tags or filtered by starred
+              status. The dashboard search is accessed through the dashboard picker, available in the dashboard top nav
+              area. The dashboard search can also be opened by using the shortcut <code>F</code>.</p>
+            <p><img class="no-shadow" src="/assets/docs_images/dashboard_search_annotated.png" width="700px"></p>
+            <ol>
+              <li><code>Search Bar</code>: The search bar allows you to enter any string and search both database and
+                file
+                based dashboards in real-time.</li>
+              <li><code>Starred</code>: Here you find all your starred dashboards.</li>
+              <li><code>Recent</code>: Here you find the latest created dashboards.</li>
+              <li><code>Folders</code>: The tags filter allows you to filter the list by dashboard tags.</li>
+              <li><code>Root</code>: The root contains all dashboards that are not placed in a folder.</li>
+              <li><code>Tags</code>: The tags filter allows you to filter the list by dashboard tags.</li>
+            </ol>
+            <p>When using only a keyboard, you can use your keyboard arrow keys to navigate the results, hit enter to
+              open
+              the selected dashboard.</p>
+            <h2 id="find-by-dashboard-name">Find by dashboard name</h2>
+            <p>Begin typing any part of the desired dashboard names in the search bar. Search will return results for
+              for
+              any partial string match in real-time, as you type.</p>
+            <p>Dashboard search is: - Real-time - <em>Not</em> case sensitive - Functional across stored <em>and</em>
+              file
+              based dashboards.</p>
+            <h2 id="filter-by-tag-s">Filter by Tag(s)</h2>
+            <p>Tags are a great way to organize your dashboards, especially as the number of dashboards grow. Tags can
+              be
+              added and managed in the dashboard <code>Settings</code>.</p>
+            <p>To filter the dashboard list by tag, click on any tag appearing in the right column. The list may be
+              further filtered by clicking on additional tags:</p>
+            <p>Alternately, to see a list of all available tags, click the tags dropdown menu. All tags will be shown,
+              and
+              when a tag is selected, the dashboard search will be instantly filtered:</p>
+            <p>When using only a keyboard: <code>tab</code> to focus on the <em>tags</em> link, <code>▼</code> down
+              arrow
+              key to find a tag and select with the <code>Enter</code> key.</p>
+            <p><strong>Note</strong>: When multiple tags are selected, iron-iq will show dashboards that include
+              <strong>all</strong>.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="v-pills-sixn" role="tabpanel" aria-labelledby="v-pills-sixn-tab">
+      <div>
+        <article>
+          <h2>Sharing features </h2>
+          <div class="docs-content-inner" id="doc-article-text">
+            <h1 id="sharing-features"></h1>
+            <p>iron-iq provides a number of ways to share a dashboard or a specific panel to other users within your
+              organization. It also provides ways to publish interactive snapshots that can be accessed by external
+              partners.</p>
+            <h2 id="share-dashboard">Share dashboard</h2>
+            <p>Share a dashboard via the share icon in the top nav. This opens the share dialog where you can get a link
+              to the current dashboard with the current selected time range and template variables. If you have made
+              changes to the dashboard, make sure those are saved before sending the link.</p>
+            <h3 id="dashboard-snapshot">Dashboard snapshot
+            </h3>
+            <p>A dashboard snapshot is an instant way to share an interactive dashboard publicly. When created, we
+              <strong>strip sensitive data</strong> like queries (metric, template and annotation) and panel links,
+              leaving only the visible metric data and series names embedded into your dashboard. Dashboard snapshots
+              can
+              be accessed by anyone who has the link and can reach the URL.</p>
+            <div class="docs-image" style="max-width: 700px">
+              <div class="screenshot" lg-uid="lg0"><a href="/images/docs_images/share_panel_modal.png" title=""
+                  lg-event-uid="&amp;1"><img alt="" src="/images/docs_images/share_panel_modal.png">
+                  <!-- {{!-- <div class="screenshot__zoom"><img src="/images/docs_images/zoom.png"></div> --}} -->
+                </a></div>
+            </div>
+            <h3 id="publish-snapshots">Publish snapshots</h3>
+            <p>You can publish snapshots to you local instance or to snapshot.raintank.io. The later is a free service
+              that is provided
+              by Raintank that allows you to publish dashboard snapshots to an external
+              iron-iq instance. The same rules still apply, anyone with the link can view it. You can set an expiration
+              time if you want the snapshot to be removed after a certain time period.</p>
+            <h2 id="share-panel">Share Panel</h2>
+            <p>Click a panel title to open the panel menu, then click share in the panel menu to open the Share Panel
+              dialog. Here you have access to a link that will take you to exactly this panel with the current time
+              range
+              and selected template variables.</p>
+            <h3 id="direct-link-rendered-image">Direct Link Rendered Image</h3>
+            <p>You also get a link to service side rendered PNG of the panel. Useful if you want to share an image of
+              the
+              panel. Please note that for OSX and Windows, you will need to ensure that a <code>phantomjs</code> binary
+              is
+              available under <code>tools/phantomjs/phantomjs</code>. For Linux, a <code>phantomjs</code> binary is
+              included - however, you should ensure that any requisite libraries (e.g. libfontconfig1) are available.
+            </p>
+
+            <h4 id="query-string-parameters-for-server-side-rendered-images">Query String Parameters For Server-Side
+              Rendered Images</h4>
+            <ul>
+              <li><strong>width</strong>: width in pixels. Default is 800.</li>
+              <li><strong>height</strong>: height in pixels. Default is 400.</li>
+              <li><strong>tz</strong>: timezone in the format <code>UTC%2BHH%3AMM</code> where HH and MM are offset in
+                hours and minutes after UTC</li>
+              <li><strong>timeout</strong>: number of seconds. The timeout can be increased if the query for the panel
+                needs more than the default 30 seconds.</li>
+            </ul>
+            <h3 id="embed-panel">Embed Panel</h3>
+            <p>You can embed a panel using an iframe on another web site. This tab will show you the html that you need
+              to
+              use.</p>
+            <blockquote>
+              <p><em>Notice</em> This sharing require either anonymous access or setting cookie_samesite to none
+              </p>
+            </blockquote>
+            <p>Example:</p>
+            <pre class=" language-html"><code class=" language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>iframe</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://snapshot.raintank.io/dashboard-solo/snapshot/y7zwi2bZ7FcoTlB93WN7yWO4aMiz3pZb?from<span class="token punctuation">=</span>1493369923321&amp;to<span class="token punctuation">=</span>1493377123321&amp;panelId<span class="token punctuation">=</span>4<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>650<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>300<span class="token punctuation">"</span></span> <span class="token attr-name">frameborder</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>iframe</span><span class="token punctuation">&gt;</span></span>
+              </code></pre>
+            <p>Below there should be an interactive iron-iq graph embedded in an iframe:</p><iframe
+              src="https://snapshot.raintank.io/dashboard-solo/snapshot/y7zwi2bZ7FcoTlB93WN7yWO4aMiz3pZb?from=1493369923321&amp;to=1493377123321&amp;panelId=4"
+              width="650" height="300" frameborder="0"></iframe>
+            <h3 id="export-panel-data">Export Panel Data</h3>
+            <div class="docs-image" style="max-width: 500px">
+              <div class="screenshot" lg-uid="lg1"><a href="/images/docs_images/export_panel_data.png" title=""
+                  lg-event-uid="&amp;2"><img alt="" src="/images/docs_images/export_panel_data.png">
+                  <!-- {{!-- <div class="screenshot__zoom"><img src="/images/docs_images/zoom.png"></div> --}} -->
+                </a></div>
+            </div>
+            <p>The submenu for a panel can be found by clicking on the title of a panel and then on the More submenu.
+            </p>
+            <p>This menu contains two options for exporting data:</p>
+            <ul>
+              <li>The panel JSON (the specification and not the data) can be exported or updated via the panel context
+                menu.</li>
+              <li>Panel data can be exported in the CSV format for Table and Graph Panels.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="v-pills-sevenn" role="tabpanel" aria-labelledby="v-pills-sevenn-tab">
+      <div>
+        <article>
+          <h2>Time Range Controls</h2>
+          <div class="docs-content-inner" id="doc-article-text">
+            <h1 id="time-range-controls">
+            </h1>
+            <p>iron-iq provides numerous ways to manage the time ranges of the data being visualized, both at the
+              Dashboard-level and the Panel-level.</p>
+            <p><img class="no-shadow" src="/assets/docs_images/timepicker.png" width="700px"></p>
+            <p>In the top right, you have the master Dashboard time picker (it’s in between the ‘Zoom out’ and the
+              ‘Refresh’ links).</p>
+            <ol>
+              <li><code>Current time range &amp; refresh interval</code>: This shows the current dashboard time and
+                refresh interval. It also acts as the menu button to toggle the time range controls.</li>
+              <li><code>Quick ranges</code>: Quick ranges are preset values to choose a relative time. At this time,
+                quick
+                ranges are not configurable, and will appear on every dashboard.</li>
+              <li><code>Time range</code>: The time range section allows you to mix both explicit and relative ranges.
+                The
+                explicit time range format is <code>YYYY-MM-DD HH:MM:SS</code></li>
+              <li><code>Refreshing every:</code> When enabled, auto-refresh will reload the dashboard at the specified
+                time range. Auto-refresh is most commonly used with relative time ranges ending in <code>now</code>, so
+                new data will appear when the dashboard refreshes.</li>
+            </ol>
+            <p>These settings apply to all Panels in the Dashboard (except those with Panel Time Overrides enabled)</p>
+            <h2 id="time-units">Time Units</h2>
+            <p>The following time units are supported: <code>s (seconds)</code>, <code>m (minutes)</code>, <code>h
+                (hours)</code>, <code>d (days)</code>, <code>w (weeks)</code>, <code>M (months)</code>, <code>y
+                (years)</code>. The minus operator allows you to step back in time, relative to now. If you wish to
+              display the full period of the unit (day, week, month, etc…), append <code>/$unit</code> to the end.</p>
+            <p>Take a look at some examples to seen these concepts in practice:</p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Example Relative Range</th>
+                  <th>From:</th>
+                  <th>To:</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Last 5 minutes</td>
+                  <td><code>now-5m</code></td>
+                  <td><code>now</code></td>
+                </tr>
+                <tr>
+                  <td>The day so far</td>
+                  <td><code>now/d</code></td>
+                  <td><code>now</code></td>
+                </tr>
+                <tr>
+                  <td>This week</td>
+                  <td><code>now/w</code></td>
+                  <td><code>now/w</code></td>
+                </tr>
+                <tr>
+                  <td>Week to date</td>
+                  <td><code>now/w</code></td>
+                  <td><code>now</code></td>
+                </tr>
+                <tr>
+                  <td>Previous Month</td>
+                  <td><code>now-1M/M</code></td>
+                  <td><code>now-1M/M</code></td>
+                </tr>
+              </tbody>
+            </table>
+            <h2 id="dashboard-time-options">Dashboard Time Options</h2>
+            <p>There are two settings available in the Dashboard Settings General tab, allowing customization of the
+              auto-refresh intervals and the definition of <code>now</code>.</p>
+            <p><img class="no-shadow" src="/assets/docs_images/time_options.png" width="500px"></p>
+            <h3 id="auto-refresh-options">Auto-Refresh Options</h3>
+            <p>It’s possible to customize the options displayed for relative time and the auto-refresh options.</p>
+            <p>From Dashboard settings, click the Timepicker tab. From here you can specify the relative and
+              auto-refresh
+              intervals. The Timepicker tab settings are saved on a per Dashboard basis. Entries are comma separated and
+              accept any valid time unit.</p>
+            <h3 id="defining-now">Defining Now</h3>
+            <p>iron-iq offers the ability to override the <code>now</code> value on a per dashboard basis. Most
+              commonly,
+              this feature is used to accommodate known delays in data aggregation to avoid null values.</p>
+            <h2 id="panel-time-overrides-timeshift">Panel time overrides &amp; timeshift</h2>
+            <p>You can override the relative time range for individual panels, causing them to be different than what is
+              selected in the Dashboard time picker in the upper right. This allows you to show metrics from different
+              time periods or days at the same time.</p>
+            <div class="docs-image" style="max-width: 500px">
+              <div class="screenshot" lg-uid="lg0"><a href="/assets/docs_images/panel_time_override.png" title=""
+                  lg-event-uid="&amp;1"><img alt="" src="/assets/docs_images/panel_time_override.png">
+                  <!-- {{!-- <div class="screenshot__zoom"><img src="/images/docs_images/zoom.png"></div> --}} -->
+                </a></div>
+            </div>
+            <p>You control these overrides in panel editor mode and the tab <code>Time Range</code>.</p>
+            <div class="docs-image" style="max-width: 500px">
+              <div class="screenshot" lg-uid="lg1"><a href="/assets/docs_images/time_range_tab.png" title=""
+                  lg-event-uid="&amp;2"><img alt="" src="/assets/docs_images/time_range_tab.png">
+                  <!-- {{!-- <div class="screenshot__zoom"><img src="/images/docs_images/zoom.png"></div> --}} -->
+                </a></div>
+            </div>
+            <p>When you zoom or change the Dashboard time to a custom absolute time range, all panel overrides will be
+              disabled. The panel relative time override is only active when the dashboard time is also relative. The
+              panel timeshift override is always active, even when the dashboard time is absolute.</p>
+            <p>The <code>Hide time override info</code> option allows you to hide the override info text that is by
+              default shown in the upper right of a panel when overridden time range options.</p>
+            <p>Note: You can only override the dashboard time with relative time ranges. Absolute time ranges are not
+              available.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="v-pills-eightn" role="tabpanel" aria-labelledby="v-pills-eightn-tab">
+      <div>
+        <article>
+          <h2>Dashboard Version History</h2>
+          <div class="docs-content-inner" id="doc-article-text">
+            <h1 id="dashboard-version-history"></h1>
+            <p>Whenever you save a version of your dashboard, a copy of that version is saved so that previous versions
+              of
+              your dashboard are never lost. A list of these versions is available by entering the dashboard settings
+              and
+              then selecting “Versions” in the left side menu.</p>
+            <p><img class="no-shadow" src="/assets/docs_images/dashboard_versions_list.png"></p>
+            <p>The dashboard version history feature lets you compare and restore to previously saved dashboard
+              versions.
+            </p>
+            <h2 id="comparing-two-dashboard-versions">Comparing two dashboard versions</h2>
+            <p>To compare two dashboard versions, select the two versions from the list that you wish to compare. Once
+              selected, the “Compare versions” button will become clickable. Click the button to view the diff between
+              the
+              two versions.</p>
+            <p><img class="no-shadow" src="/assets/docs_images/dashboard_versions_select.png"></p>
+            <p>Upon clicking the button, you’ll be brought to the diff view. By default, you’ll see a textual summary of
+              the changes, like in the image below.</p>
+            <p><img class="no-shadow" src="/assets/docs_images/dashboard_versions_diff_basic.png"></p>
+            <p>If you want to view the diff of the raw JSON that represents your dashboard, you can do that as well by
+              clicking the “View JSON Diff” button at the bottom.</p>
+            <p>If you want to restore to the version you are diffing against, you can do so by clicking the “Restore to
+              version &lt;x&gt;” button in the top right.</p>
+            <h2 id="restoring-to-a-previously-saved-dashboard-version">Restoring to a previously saved dashboard version
+            </h2>
+            <p>If you need to restore to a previously saved dashboard version, you can do so by either clicking the
+              “Restore” button on the right of a row in the dashboard version list, or by clicking the “Restore to
+              version
+              &lt;x&gt;” button appearing in the diff view. Clicking the button will bring up the following popup
+              prompting you to confirm the restoration.</p>
+            <p><img class="no-shadow" src="/assets/docs_images/dashboard_versions_restore.png"></p>
+            <p>After restoring to a previous version, a new version will be created containing the same exact data as
+              the
+              previous version, only with a different version number. This is indicated in the “Notes column” for the
+              row
+              in the new dashboard version. This is done simply to ensure your previous dashboard versions are not
+              affected by the change.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="v-pills-ninen" role="tabpanel" aria-labelledby="v-pills-ninen-tab">
+      <div>
+        <article>
+          <h2>Mixed Data</h2>
+          <div class="docs-content-inner" id="doc-article-text">
+            <h1 id="mixed-data-source">
+            </h1>
+            <p>This Data Source allows you to specify data source on a per query basis.</p>
+            <h2 id="usage">Usage</h2>
+            <p>To use the Mixed Data Source, create a new panel or edit an existing panel and navigate to the Queries
+              tab. From the Query popup, select “– Mixed –”. Click “Add Query” and select the desired source.</p>
+            <p>You cannot change an existing query to use the Mixed Data Source.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="v-pills-tenn" role="tabpanel" aria-labelledby="v-pills-tenn-tab">
+      <div>
+        <article>
+          <h2>Keyboard shortcuts</h2>
+          <div class="docs-content-inner" id="doc-article-text">
+            <h1 id="keyboard-shortcuts">
+            </h1>
+            <div class="docs-image docs-image--right" style="max-width: 20rem">
+              <div class="screenshot" lg-uid="lg0"><a href="/assets/docs_images/shortcuts.png" title=""
+                  lg-event-uid="&amp;1"><img alt="" src="/assets/docs_images/shortcuts.png">
+                  <!-- {{!-- <div class="screenshot__zoom"><img src="/images/docs_images/zoom.png"></div> --}} -->
+                </a></div>
+            </div>
+            <p>iron-iq v4 introduces a number of really powerful keyboard shortcuts. You can now focus a panel by
+              hovering
+              over it with your mouse. With a panel focused you can simple hit <code>e</code> to toggle panel edit mode,
+              or <code>v</code> to toggle fullscreen mode. <code>p</code> <code>r</code> removes the panel.
+              <code>p</code>
+              <code>s</code> opens share modal.</p>
+            <p>Hit <code>?</code> on your keyboard to open the shortcuts help modal.</p>
+            <h3 id="global">Global</h3>
+            <ul>
+              <li><code>g</code> <code>h</code> Go to Home Dashboard</li>
+              <li><code>g</code> <code>p</code> Go to Profile</li>
+              <li><code>s</code> <code>o</code> Open search</li>
+              <li><code>s</code> <code>s</code> Open search with starred filter</li>
+              <li><code>s</code> <code>t</code> Open search in tags view</li>
+              <li><code>esc</code> Exit edit/setting views</li>
+            </ul>
+            <h3 id="dashboard">Dashboard</h3>
+            <ul>
+              <li><code>mod+s</code> Save dashboard</li>
+              <li><code>mod+h</code> Hide row controls</li>
+              <li><code>d</code> <code>r</code> Refresh all panels</li>
+              <li><code>d</code> <code>s</code> Dashboard settings</li>
+              <li><code>d</code> <code>v</code> Toggle in-active / view mode</li>
+              <li><code>d</code> <code>k</code> Toggle kiosk mode (hides top nav)</li>
+              <li><code>d</code> <code>E</code> Expand all rows</li>
+              <li><code>d</code> <code>C</code> Collapse all rows</li>
+              <li><code>mod+o</code> Toggle shared graph crosshair</li>
+            </ul>
+            <h3 id="focused-panel">Focused Panel</h3>
+            <ul>
+              <li><code>e</code> Toggle panel edit view</li>
+              <li><code>v</code> Toggle panel fullscreen view</li>
+              <li><code>p</code> <code>s</code> Open Panel Share Modal</li>
+              <li><code>p</code> <code>d</code> Duplicate Panel</li>
+              <li><code>p</code> <code>r</code> Remove Panel</li>
+            </ul>
+            <h3 id="time-range">Time Range</h3>
+            <ul>
+              <li><code>t</code> <code>z</code> Zoom out time range</li>
+              <li><code>t</code> Move time range back</li>
+              <li><code>t</code> Move time range forward</li>
+            </ul>
+            <p>mod = CTRL on windows or linux and CMD key on Mac</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</div>

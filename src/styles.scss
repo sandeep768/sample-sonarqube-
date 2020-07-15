@@ -1,0 +1,195 @@
+@import url("@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw.css");
+@import url("mapbox-gl/dist/mapbox-gl.css");
+@import url("@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions.css");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url("https://fonts.googleapis.com/css?family=Ubuntu");
+@import url("https://fonts.googleapis.com/css?family=Hind");
+@import "~@ag-grid-community/all-modules/dist/styles/ag-grid.css";
+@import "~@ag-grid-community/all-modules/dist/styles/ag-theme-alpine.css";
+@import "~@ag-grid-community/all-modules/dist/styles/ag-theme-alpine-dark.css";
+@import "~angular-calendar/css/angular-calendar.css";
+
+.offcanvas-lg .dropdown .dropdown-menu .nav-link {
+  padding: .35rem 1rem .35rem 2.3rem !important;
+}
+
+.ag-theme-alpine-dark .ag-root-wrapper {
+  border: 0;
+}
+
+// .ag-theme-balham .ag-root {
+//   border: 1px solid #e7e7e7 !important;
+// }
+
+// .ag-theme-balham .ag-header {
+//   background-color: #f3f3f3 !important;
+//   border-bottom: 1px solid #e7e7e7 !important;
+// }
+
+// .ag-theme-balham .ag-row {
+//   border-color: #e7e7e7 !important;
+// }
+
+// .ag-theme-balham-dark .ag-row-odd {
+//   background-color: #464646 !important;
+// }
+
+// .ag-theme-balham-dark .ag-row-even {
+//   background-color: #2f2f2f !important;
+// }
+
+.ag-theme-alpine-dark .ag-row {
+  border: 0 !important;
+}
+
+body,
+html {
+  height: 100vh;
+  width: 100vw;
+  font-size: 14px;
+  overflow: hidden;
+}
+
+.md-drppicker.double {
+  width: 620px !important;
+  padding: 10px;
+  margin-top: 15px;
+}
+
+.md-drppicker .btn {
+  font-size: 12px;
+  background-color: #42ade9 !important;
+  line-height: 28px !important;
+  box-shadow: none !important;
+  margin-left: 10px;
+  border-radius: 3px !important;
+  font-family: Ubuntu;
+  padding: 0px 10px !important;
+  color: #fff !important;
+  text-transform: unset !important;
+}
+
+.md-drppicker .btn.btn-default {
+  color: #0f0f10 !important;
+  background-color: #eeeef0 !important;
+}
+
+.md-drppicker .ranges ul li button.active {
+  background-color: #42ade9 !important;
+}
+
+.md-drppicker .ranges ul li button {
+  padding: 5px 12px !important;
+  margin: 3px 0px;
+  outline: none;
+  font-size: 12px;
+  border-radius: 3px;
+  font-family: Ubuntu;
+}
+
+.md-drppicker .ranges ul li:hover {
+  background-color: transparent !important;
+}
+
+.md-drppicker.ltr .ranges {
+  padding-right: 10px;
+  border-right: 1px solid #f2f2f2;
+}
+
+.md-drppicker .ranges ul li button:hover {
+  background-color: #eeeef0;
+}
+
+.md-drppicker td.in-range {
+  background-color: #eeeef0 !important;
+}
+
+.md-drppicker td.active,
+.md-drppicker td.active:hover {
+  background-color: #42ade9 !important;
+}
+
+.md-drppicker th {
+  color: #0f0f10 !important;
+  font-family: Ubuntu;
+  font-weight: 100 !important;
+}
+
+// css to make scrollbars MAC looklike => dark theme
+.custom-scroll-dark::-webkit-scrollbar,
+.ag-body-horizontal-scroll-viewport::-webkit-scrollbar,
+.ag-body-viewport::-webkit-scrollbar {
+  background-color: #fff;
+  width: 8px;
+}
+.ngxmdp .highlight {
+  color: #053ebd !important;
+}
+
+.ngxmdp .daycell {
+  color: #000000 !important;
+}
+
+
+.custom-scroll-dark::-webkit-scrollbar-track,
+.ag-body-horizontal-scroll-viewport::-webkit-scrollbar-track,
+.ag-body-viewport::-webkit-scrollbar-track {
+  background-color: #2e3436;
+}
+
+.custom-scroll-dark::-webkit-scrollbar-thumb,
+.ag-body-horizontal-scroll-viewport::-webkit-scrollbar-thumb,
+.ag-body-viewport::-webkit-scrollbar-thumb {
+  background-color: #919495;
+  border-radius: 16px;
+  border: 1px solid #5b5b5b;
+}
+
+.custom-scroll-dark::-webkit-scrollbar-thumb:hover,
+.ag-body-horizontal-scroll-viewport::-webkit-scrollbar-thumb:hover,
+.ag-body-viewport::-webkit-scrollbar-thumb:hover {
+  background-color: #aaacad;
+}
+
+.custom-scroll-dark::-webkit-scrollbar-button,
+.ag-body-horizontal-scroll-viewport::-webkit-scrollbar-button,
+.ag-body-viewport::-webkit-scrollbar-button {
+  display: none;
+}
+
+// css to make scrollbars MAC looklike => light theme
+.custom-scroll-light::-webkit-scrollbar {
+  background-color: #fff;
+  width: 8px;
+}
+
+.custom-scroll-light::-webkit-scrollbar-track {
+  background-color: #fff;
+}
+
+.custom-scroll-light::-webkit-scrollbar-thumb {
+  background-color: #bcbcbc;
+  border-radius: 16px;
+  border: 1px solid #bcbcbc;
+}
+
+.custom-scroll-light::-webkit-scrollbar-thumb:hover {
+  background-color: #bcbcbc;
+}
+
+.custom-scroll-light::-webkit-scrollbar-button {
+  display: none;
+}
+
+.calendar-icon {
+  color: #42ade9 !important;  
+  font-size: 12px;
+}
+
+.ag-theme-alpine-dark .ag-pinned-left-header, 
+.ag-theme-alpine .ag-pinned-left-header, 
+.ag-theme-alpine-dark .ag-ltr .ag-cell:not(.ag-cell-focus).ag-cell-last-left-pinned:not(.ag-cell-range-right), .ag-theme-alpine-dark .ag-ltr .ag-cell.ag-cell-range-selected:not(.ag-cell-range-single-cell).ag-cell-last-left-pinned:not(.ag-cell-range-right), .ag-theme-alpine-dark .ag-ltr .ag-root:not(.ag-has-focus) .ag-cell.ag-cell-last-left-pinned:not(.ag-cell-range-right),
+.ag-theme-alpine .ag-ltr .ag-cell:not(.ag-cell-focus).ag-cell-last-left-pinned:not(.ag-cell-range-right), .ag-theme-alpine .ag-ltr .ag-cell.ag-cell-range-selected:not(.ag-cell-range-single-cell).ag-cell-last-left-pinned:not(.ag-cell-range-right), .ag-theme-alpine .ag-ltr .ag-root:not(.ag-has-focus) .ag-cell.ag-cell-last-left-pinned:not(.ag-cell-range-right)
+{
+  border-right: none !important;
+}

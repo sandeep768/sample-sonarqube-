@@ -1,0 +1,81 @@
+<div class="spinner-border" [ngClass]="isDarkTheme ? 'title-light' : 'title-dark'" *ngIf="load" role="status">
+	<span class="sr-only">Loading...</span>
+</div>
+<div class="row headerRow" [ngClass]="isDarkTheme ? 'header-dark' : 'header-light'">
+	<div class="col-lg-2 padding-top">
+		<a class="mt-2" href="#" data-toggle="offcanvas" data-target="#mainMenu">
+			<img alt="image not found"
+				[src]="isDarkTheme ? '../../../../../assets/images/ironiq-dark.png' : '../../../../../assets/images/ironiq-light.png'">
+		</a>
+	</div>
+	<div class="col-lg-8">
+		<p class="title-text text-center" [ngClass]="isDarkTheme ? 'title-dark' : 'title-light'">
+			Alerts
+		</p>
+	</div>
+	<div class="col-lg-2 py-1">
+		<i class="mdi mdi-close float-right" [ngClass]="isDarkTheme ? 'dark' : 'light'" routerLink="/"
+			(click)="loader()"></i>
+	</div>
+</div>
+<div class="content" [ngClass]="isDarkTheme? 'details-dark custom-scroll-dark': 'details-light custom-scroll-light'">
+	<div class="row pt-3 px-5 mx-3" [ngClass]="isDarkTheme ? 'details-dark' : 'details-light'">
+		<div class="col-lg-10"></div>
+		<div class="col-lg-2 text-right">
+			<div class="btn-group">
+				<button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+					aria-haspopup="true" aria-expanded="false">
+					{{selectedRange}}
+				</button>
+				<div class="dropdown-menu dropdown-menu-right">
+					<button class="dropdown-item" type="button" (click)="filterByDate('Last hour')"
+						[class.active]="selectedRange === 'Last hour'">Last hour</button>
+					<button class="dropdown-item" type="button" (click)="filterByDate('Last day')"
+						[class.active]="selectedRange === 'Last day'">Last day</button>
+					<button class="dropdown-item" type="button" (click)="filterByDate('Last week')"
+						[class.active]="selectedRange === 'Last week'">Last week</button>
+					<button class="dropdown-item" type="button" (click)="filterByDate('Last month')"
+						[class.active]="selectedRange === 'Last month'">Last month</button>
+					<button class="dropdown-item" type="button" (click)="filterByDate('All time')"
+						[class.active]="selectedRange === 'All time'">All time</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row pt-3 px-5 mx-3" [ngClass]="isDarkTheme ? 'details-dark' : 'details-light'">
+		<div class="col-lg-2">
+			<div class="nav flex-column nav-pills custom-tab-section" role="tablist" aria-orientation="vertical"
+				[ngClass]="isDarkTheme ? 'left-section-dark' : 'left-section-light'">
+				<a class="nav-link" [ngClass]="isDarkTheme ? 'dark-color' : 'light-color'"
+					(click)="updateListing('all')" [class.active]="listingAction === 'all'">
+					All
+				</a>
+				<a class="nav-link" [ngClass]="isDarkTheme ? 'dark-color' : 'light-color'"
+					(click)="updateListing('open')" [class.active]="listingAction === 'open'">
+					Open
+				</a>
+				<a class="nav-link" [ngClass]="isDarkTheme ? 'dark-color' : 'light-color'"
+					(click)="updateListing('ack')" [class.active]="listingAction === 'ack'">
+					Acknowledged
+				</a>
+				<a class="nav-link" [ngClass]="isDarkTheme ? 'dark-color' : 'light-color'"
+					(click)="updateListing('esc')" [class.active]="listingAction === 'esc'">
+					Escalated
+				</a>
+				<a class="nav-link" [ngClass]="isDarkTheme ? 'dark-color' : 'light-color'"
+					(click)="updateListing('close')" [class.active]="listingAction === 'close'">
+					Closed
+				</a>
+			</div>
+		</div>
+		<div class="col-lg-10">
+			<p class="text-center pt-5 mt-5" *ngIf="rowData.length == 0" [ngClass]="isDarkTheme ? 'title-dark' : 'title-light'">No alert found</p>
+			<ag-grid-angular *ngIf="rowData.length > 0" style="width: 100%; height: 87vh;"
+				[ngClass]="isDarkTheme ? 'ag-theme-alpine-dark' : 'ag-theme-alpine'" [rowData]="rowData"
+				[columnDefs]="columnDefs" [defaultColDef]="defaultColDef" (gridReady)="onGridReady($event)"
+				[modules]="modules" [pagination]="true" [paginationPageSize]="17" [frameworkComponents]="frameworkComponents">
+			</ag-grid-angular>
+		</div>
+	</div>
+
+</div>

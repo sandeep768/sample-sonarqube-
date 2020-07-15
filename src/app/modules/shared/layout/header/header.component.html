@@ -1,0 +1,140 @@
+<div id="mainMenu" class="navmenu navmenu-inverse navmenu-fixed-left offcanvas-lg navbar-color"
+  [ngClass]="isDarkTheme ? ' custom-scroll-dark' : ' custom-scroll-light'">
+  <a class="navmenu-brand visible-lg" href="#">
+    <img alt="image not found" src="../../../../../assets/images/ironiq-icon-dark.png" />
+  </a>
+  <ul class="nav navmenu-nav flex-column custom-height">
+    <li class="nav-item">
+      <a class="nav-link" href="#" (click)="goToRoute('/scada')" data-toggle="offcanvas" data-target=".navmenu">
+        <span class="pr-1 mdi mdi-tune"></span>
+        Scada
+      </a>
+    </li>
+    <li class="nav-item dropdown">
+      <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+        <span class="pr-1 mdi mdi-chart-areaspline"></span>
+        Analytics
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu navmenu-nav" role="menu">
+        <li class="nav-item">
+          <a class="nav-link" href="#" (click)="goToRoute('/customcharts/labor')" data-toggle="offcanvas"
+            data-target=".navmenu">
+            <span class="pr-1 mdi mdi-account-clock"></span>
+            Labor
+          </a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="#" (click)="goToRoute('/customcharts/financial')" data-toggle="offcanvas"
+            data-target=".navmenu">
+            <span class="pr-1 mdi mdi-finance"></span>
+            Financial
+          </a>
+        </li> -->
+        <li class="nav-item">
+          <a class="nav-link" href="#" (click)="goToRoute('/customcharts/production')" data-toggle="offcanvas"
+            data-target=".navmenu">
+            <span class="pr-1 mdi mdi-chart-pie"></span>
+            Production
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" rel="noopener" target="_blank" href="{{analyticsUrl}}">
+            <span class="pr-1 mdi mdi-chart-bar"></span>
+            Time series
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" rel="noopener" target="_blank" href="{{dashboardUrl}}">
+            <span class="pr-1 mdi mdi-chart-line"></span>
+            South Prediction
+          </a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="#" (click)="goToRoute('/customcharts/prediction')" query data-toggle="offcanvas"
+            data-target=".navmenu">
+            <span class="pr-1 mdi mdi-worker"></span>
+            North Prediction
+          </a>
+        </li> -->
+      </ul>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" href="https://auth.iron-iq.com/auth/realms/utahgas/protocol/saml?SAMLRequest=jZLLTsNADEV%2FJZr9NE5IGzpKggoIUYlH1RYWbJCTODBSMhPGEx5%2FT2hhhXhsLV9f32NnjF3bq8XgH82angZiH7x2reFcDM4oi6xZGeyIla%2FUZnF5oeIJqI481uhRBMvTXNwDYjlPZyQJmkomALEsa2pklEZ1dFCW8zhpRHBLjrU1uRgnjELmgZaGPRo%2FliAGCTMJ0210oKagILkTwYKZnB81J9bw0JHbkHvWFd2sL3Lx6H3PKgyx7ye25wcymiaV7UIcw4QfuY50nVfTBmaH80YmJaYyQWjkYZKSBCghaqaAcVqKYOWst5Vtj7WptXn4PXy5b2J1vt2u5Op6sxV7ZmoH83dx%2F%2BkkimxHwP0HN35xEMXfqcP%2FRM7CvXuR7R%2FgavRcnq5sq6u34My6Dv3PK0WTaFfRtWx2rYo61O2irh0xj2drW%2Fty4gg95cK7gURYZOH3TyveAQ%3D%3D" target="_blank" rel="noopener">
+		  <span class="pr-1 mdi mdi-alert-circle-outline"></span>
+		  Alerts
+		</a>
+	  </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" (click)="goToRoute('/alert')" data-toggle="offcanvas" data-target=".navmenu">
+        <span class="pr-1 mdi mdi-alert-outline"></span>
+        Custom Alerts
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="https://nodered.iron-iq.com/" target="_blank" rel="noopener">
+        <span class="pr-1 mdi mdi-calendar-range"></span>
+        Nodered
+      </a>
+    </li>
+    <!-- <li class="nav-item">
+      <a class="nav-link" href="#" (click)="goToRoute('/dashboard')" data-toggle="offcanvas" data-target=".navmenu">
+        <span class="pr-1 mdi mdi-view-dashboard"></span>
+        Well Info
+      </a>
+    </li> -->
+    <li class="nav-item dropdown">
+      <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+        <span class="pr-1 mdi mdi-factory"></span>
+        Plant
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu navmenu-nav" role="menu">
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="#" (click)="goToRoute('/plant/overview')" data-toggle="offcanvas"
+            data-target=".navmenu">
+            <span class="pr-1 mdi mdi-sitemap"></span>
+            Overview
+          </a>
+        </li> -->
+        <li class="nav-item">
+          <a class="nav-link" href="#" (click)="goToRoute('/plant/sales')" data-toggle="offcanvas"
+            data-target=".navmenu">
+            <span class="pr-1 mdi mdi-cash-usd-outline"></span>
+            Sales
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" (click)="goToRoute('/help')" data-toggle="offcanvas" data-target=".navmenu">
+        <span class="pr-1 mdi mdi-help-circle-outline"></span>
+        Help
+      </a>
+    </li>
+  </ul>
+
+  <ul class="nav navmenu-nav flex-column custom-height2">
+    <li class="nav-item nav-link">
+      <span class="user-name">Hello, {{ userName }}</span>
+    </li>
+    <li class="nav-item nav-link">
+      <div class="custom-control custom-switch">
+        <input type="checkbox" class="custom-control-input" id="darkmode" [(ngModel)]="isChecked"
+          (change)="switchTheme(isChecked ? 'true' : 'false')" />
+        <label class="custom-control-label" for="darkmode">Dark Mode</label>
+      </div>
+    </li>
+    <li class="nav-item"><a class="nav-link" rel="noopener" target="_blank" href="{{profileUrl}}">
+        <span class="pr-1 mdi mdi-account"></span>
+        Profile
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" (click)="logout()">
+        <span class="pr-1 mdi mdi-power"></span>
+        Sign Out
+      </a>
+    </li>
+  </ul>
+</div>

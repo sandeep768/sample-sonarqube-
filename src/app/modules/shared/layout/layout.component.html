@@ -1,0 +1,10 @@
+<div class="container-fluid p-0 h-100">
+  <div class="d-flex flex-column h-100">
+    <div class="header">
+      <app-header></app-header>
+    </div>
+    <div class="content" [ngClass]="(isDarkTheme)?' custom-scroll-dark':' custom-scroll-light'">
+      <app-main></app-main>
+    </div>
+  </div>
+</div>

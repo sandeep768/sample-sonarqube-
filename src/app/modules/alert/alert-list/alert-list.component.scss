@@ -1,0 +1,120 @@
+.padding-top {
+  padding-top: 9px;
+}
+
+.headerRow {
+  margin: 0;
+  width: 100%;
+  display: inline-flex;
+  height: 45px;
+}
+
+.content {
+  height: calc(100% - 45px);
+  overflow: auto;
+}
+
+.details-dark {
+  background: #464646;
+}
+
+.details-light {
+  background: #fff;
+}
+
+.title-text {
+  font-family: Hind;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 0px;
+  padding-top: 8px;
+}
+
+.header-dark {
+  background: #2f2f2f;
+}
+
+.header-light {
+  background: #f3f3f3;
+}
+
+.mdi-close {
+  cursor: pointer;
+  font-size: 25px;
+  outline: none;
+}
+
+.dark {
+  color: #fff;
+}
+
+.light {
+  color: #101010;
+}
+
+.spinner-border {
+  position: fixed;
+  z-index: 3;
+  color: white;
+  left: 49%;
+  top: 49%;
+  background: #2424246e;
+}
+
+.title-light {
+  color: #242424;
+}
+
+.title-dark {
+  color: #fff;
+}
+
+.nav-link {
+ cursor: pointer;
+}
+
+.nav-pills .nav-link.active.dark-color,
+.nav-pills .show>.nav-link {
+  color: #fff;
+  background-color: #393939;
+  border-left: 3px solid #42ade9;
+}
+
+.nav-pills .nav-link.active.light-color,
+.nav-pills .show>.nav-link {
+  color: #42ade9;
+  background: linear-gradient(to left, #ffffff, rgba(255, 255, 255, 0.35));
+  border-left: 3px solid #42ade9;
+}
+
+.custom-tab-section {
+	border-radius: 8px;
+  }
+  
+  .left-section-dark {
+	background-color: #2f2f2f;
+  }
+  
+  .left-section-light {
+	background-color: #f3f3f3;
+  }
+
+  .light-color {
+	font-family: Hind;
+	color: #3f3f40;
+	font-weight: 600;
+  }
+  
+  .light-color:hover {
+	color: rgba(63, 63, 64, 0.6);
+  }
+  
+  .dark-color {
+	font-family: Hind;
+	color: #fff;
+	font-weight: 600;
+  }
+  
+  .dark-color:hover {
+	color: rgba(255, 255, 255, 0.6);
+  }

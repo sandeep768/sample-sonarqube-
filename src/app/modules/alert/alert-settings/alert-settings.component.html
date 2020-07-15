@@ -1,0 +1,153 @@
+<div class="spinner-border" [ngClass]="isDarkTheme ? 'text-light' : 'text-dark'" *ngIf="load" role="status">
+    <span class="sr-only">Loading...</span>
+</div>
+<div class="row headerRow" [ngClass]="isDarkTheme ? 'header-dark' : 'header-light'">
+    <div class="col-lg-2 padding-top">
+        <a class="mt-2" href="#" data-toggle="offcanvas" data-target="#mainMenu">
+            <img alt="image not found"
+                [src]="isDarkTheme ? '../../../../../assets/images/ironiq-dark.png' : '../../../../../assets/images/ironiq-light.png'">
+        </a>
+    </div>
+    <div class="col-lg-8">
+        <p class="title-text text-center" [ngClass]="isDarkTheme ? 'title-dark' : 'title-light'">
+            Alert settings
+        </p>
+    </div>
+    <div class="col-lg-2 py-1">
+        <i class="mdi mdi-close float-right" [ngClass]="isDarkTheme ? 'dark' : 'light'" routerLink="/"
+            (click)="loader()"></i>
+    </div>
+</div>
+<div class="content" [ngClass]="isDarkTheme? 'details-dark custom-scroll-dark': 'details-light custom-scroll-light'">
+    <div class="row w-100 mt-3">
+        <div class="flex mr-5 ml-5 pl-5" [ngClass]="isDarkTheme ? 'flex-head-dark' : 'flex-head-light'">
+            <div>
+                <p class="weighted">Rule</p>
+            </div>
+            <div class="flex-head" [ngClass]="isDarkTheme ? 'flex-head-dark' : 'flex-head-light'">
+                <div class="label-div">
+                    <p class="form-label">Tag name</p>
+                </div>
+                <div style="width: 70%;">
+                    <input type="text" id="tag-name" maxlength="1024"
+                        class="form-control ng-valid ng-valid-maxlength ng-touched ng-dirty ng-empty note-input"
+                        placeholder="..." data-ng-model="tag_name">
+                </div>
+                <div class="label-div">
+                    <p class="form-label">Evaluate every</p>
+                </div>
+                <div class="input-indiv label-div mr-5">
+                    <div class="input-group">
+                        <input type="text" style="text-align: right;" class="form-control"
+                            aria-label="Amount (to the nearest dollar)" />
+                        <div class="input-group-prepend">
+                            <select>
+                                <option value="minute">min</option>
+                                <option value="hour">hr</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="label-div">
+                    <p class="form-label">For</p>
+                </div>
+                <div class="input-indiv label-div">
+                    <div class="input-group">
+                        <input type="text" style="text-align: right;" class="form-control"
+                            aria-label="Amount (to the nearest dollar)" />
+                        <div class="input-group-prepend">
+                            <select>
+                                <option value="minute">min</option>
+                                <option value="hour">hr</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row w-100 mt-3">
+        <div class="flex mr-5 ml-5 pl-5" [ngClass]="isDarkTheme ? 'flex-head-dark' : 'flex-head-light'">
+            <div>
+                <p class="weighted">Conditions</p>
+            </div>
+            <div class="flex-head" [ngClass]="isDarkTheme ? 'flex-head-dark' : 'flex-head-light'">
+                <div class="mr-2">
+                    <select class="p-2">
+                        <option value="minute">When</option>
+                        <option value="hour">While</option>
+                    </select>
+                </div>
+                <div class="mr-2">
+                    <select class="p-2">
+                        <option value="minute">Percent_diff()</option>
+                        <option value="hour">latest value</option>
+                    </select>
+                </div>
+                <div class="mr-2">
+                    <select class="p-2">
+                        <option value="minute">of</option>
+                    </select>
+                </div>
+                <div class="mr-2">
+                    <select class="p-2">
+                        <option value="minute">Query(A, 10m, now-10m)</option>
+                        <option value="hour">Query(A, 10m, now-20m)</option>
+                    </select>
+                </div>
+                <div class="mr-2">
+                    <select class="p-2">
+                        <option value="minute">is Outside Range</option>
+                        <option value="hour">is Equal</option>
+                    </select>
+                </div>
+                <div class="input-indiv mr-2">
+                    <div class="input-group">
+                        <input type="text" style="text-align: right; height: 40px;" class="form-control p-2"
+                            aria-label="Amount (to the nearest dollar)" />
+                        <div class="input-group-prepend">
+                            <select class="p-2">
+                                <option value="minute">min</option>
+                                <option value="hour">hr</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="mr-2">
+                    <select class="p-2">
+                        <option value="minute">To</option>
+                    </select>
+                </div>
+                <div class="input-indiv">
+                    <div class="input-group">
+                        <input type="text" style="text-align: right; height: 40px;" class="form-control p-2"
+                            aria-label="Amount (to the nearest dollar)" />
+                        <div class="input-group-prepend">
+                            <select class="p-2">
+                                <option value="minute">min</option>
+                                <option value="hour">hr</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row w-100 mt-3">
+        <div class="flex mr-5 ml-5 pl-5" [ngClass]="isDarkTheme ? 'flex-head-dark' : 'flex-head-light'">
+            <div>
+                <p class="weighted float-left">Notification Configuration</p>
+                <p class="float-right" style="color:#007bff;"><i style="font-size: 16px; color:#007bff;"
+                        class="mdi mdi-table-edit mr-2" [ngClass]="isDarkTheme ? 'dark' : 'light'"
+                        (click)="loader()"></i>edit notification</p>
+            </div>
+            <div class="flex-head" [ngClass]="isDarkTheme ? 'flex-head-dark' : 'flex-head-light'">
+                <ag-grid-angular style="width: 100%; height: 50vh;"
+                    [ngClass]="isDarkTheme ? 'ag-theme-balham-dark' : 'ag-theme-balham'" [rowData]="rowData"
+                    [columnDefs]="columnDefs" [defaultColDef]="defaultColDef" (gridReady)="onGridReady($event)"
+                    [modules]="modules" [floatingFilter]="true">
+                </ag-grid-angular>
+            </div>
+        </div>
+    </div>
+</div>
