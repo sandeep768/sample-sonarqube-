@@ -61,8 +61,15 @@ export class AlertListComponent implements OnInit {
 			case 'Last month': startDate = moment().subtract(30, 'days').format('YYYY-MM-DD HH:mm:ss'); break;;
 		}
 		const response: any = await this.alertService.listAlerts(e, startDate, endDate);
+		this.loadRowData(response);
+	}
+
+	async loadRowData(response) {
 		this.rowData = await response.map(f => {
-			f.created_at = moment(new Date(f.created_at)).format('LLL')
+			f.created_at = moment(new Date(f.created_at)).format('LLL');
+			switch (f.severity) {
+				case 'critical': f.severity = 'P3'; break;
+			}
 			return f;
 		});
 	}
@@ -72,13 +79,7 @@ export class AlertListComponent implements OnInit {
 			this.isDarkTheme = res;
 		});
 		const response: any = await this.alertService.listAlerts('All time', 0, 0);
-		this.rowData = await response.map(f => {
-			f.created_at = moment(new Date(f.created_at)).format('LLL');
-			switch (f.severity) {
-				case 'critical': f.severity = 'P3'; break;
-			}
-			return f;
-		});
+		this.loadRowData(response);
 		this.columnDefs = [
 			{
 				headerName: 'Info',

@@ -1,0 +1,36 @@
+<div class="spinner-border" [ngClass]="isDarkTheme ? 'title-light' : 'title-dark'" *ngIf="load" role="status">
+	<span class="sr-only">Loading...</span>
+</div>
+<div class="row headerRow" [ngClass]="isDarkTheme ? 'header-dark' : 'header-light'">
+	<div class="col-lg-2 padding-top">
+		<a class="mt-2" href="#" data-toggle="offcanvas" data-target="#mainMenu">
+			<img alt="image not found"
+				[src]="isDarkTheme ? '../../../../../assets/images/ironiq-dark.png' : '../../../../../assets/images/ironiq-light.png'">
+		</a>
+	</div>
+	<div class="col-lg-8">
+		<p class="title-text text-center" [ngClass]="isDarkTheme ? 'title-dark' : 'title-light'">
+			Teams
+		</p>
+	</div>
+	<div class="col-lg-2 py-1">
+		<i class="mdi mdi-close float-right" [ngClass]="isDarkTheme ? 'dark' : 'light'" routerLink="/"
+			(click)="loader()"></i>
+	</div>
+</div>
+<div class="content" [ngClass]="isDarkTheme? 'details-dark custom-scroll-dark': 'details-light custom-scroll-light'">
+	<div class="d-flex align-items-end flex-column">
+		<button class="btn m-2" type="button">Add Team</button>
+	</div>
+	<div class="d-flex" [ngClass]="isDarkTheme ? 'details-dark' : 'details-light'">
+		<p class="text-center pt-5 mt-5" *ngIf="rowData.length == 0"
+			[ngClass]="isDarkTheme ? 'title-dark' : 'title-light'">No team found</p>
+		<ag-grid-angular *ngIf="rowData.length > 0" style="width: 100%; height: 87vh;"
+			[ngClass]="isDarkTheme ? 'ag-theme-alpine-dark' : 'ag-theme-alpine'" [rowData]="rowData"
+			[columnDefs]="columnDefs" [defaultColDef]="defaultColDef" (gridReady)="onGridReady($event)"
+			[modules]="modules" [pagination]="true" [paginationPageSize]="17"
+			[frameworkComponents]="frameworkComponents">
+		</ag-grid-angular>
+
+	</div>
+</div>

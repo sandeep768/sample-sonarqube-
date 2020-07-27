@@ -5,6 +5,8 @@ import { ThemeService } from './theme.service';
 
 // alert module related services
 import { AlertService } from './alert/alert.service';
+import { TeamService } from './team/team.service';
+
 
 @NgModule({
 	imports: [CommonModule],
@@ -28,6 +30,14 @@ export class CoreModule {
 		return {
 			ngModule: CoreModule,
 			providers: [AlertService]
+		};
+	}
+
+
+	static forTeam(): ModuleWithProviders<CoreModule> {
+		return {
+			ngModule: CoreModule,
+			providers: [TeamService]
 		};
 	}
 }

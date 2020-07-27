@@ -12,11 +12,7 @@ const routes: Routes = [
   {
     path: '',
     component: AlertListComponent
-  },
-//   {
-//     path: 'alert-list',
-//     component: AlertListComponent
-//   },
+  }
 ];
 
 @NgModule({

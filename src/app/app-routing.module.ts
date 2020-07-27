@@ -18,6 +18,11 @@ export const routes: Routes = [
 					import('./modules/alert/alert.module').then(mod => mod.AlertModule)
 			},
 			{
+				path: 'team',
+				loadChildren: () =>
+					import('./modules/team/team.module').then(mod => mod.TeamModule)
+			},
+			{
 				path: '',
 				redirectTo: '/alert',
 				pathMatch: 'full'
